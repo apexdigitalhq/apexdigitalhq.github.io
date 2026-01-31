@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Digital — Premium Digital Tools for Entrepreneurs</title>
+<meta name="description" content="Apex Digital builds AI-powered tools and premium digital products that help entrepreneurs and businesses scale smarter, move faster, and operate with precision.">
+<meta name="theme-color" content="#0a0a0f">
+<meta property="og:title" content="Apex Digital — Premium Digital Tools for Entrepreneurs">
+<meta property="og:description" content="AI-powered tools and digital products built for entrepreneurs who refuse to settle.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://apexdigitalhq.com">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+<style>
+/* ============================================
+   APEX DIGITAL — PREMIUM LANDING PAGE
+   Self-contained. No external dependencies.
+   ============================================ */
+
+/* --- Reset & Base --- */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:#0a0a0f;
+  color:#c8c9d0;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  font-size:16px;
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+/* --- Utility --- */
+.container{width:100%;max-width:1120px;margin:0 auto;padding:0 2rem}
+.section{padding:7rem 0}
+.section-label{
+  display:inline-block;
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#8b5cf6;
+  margin-bottom:1.2rem;
+}
+.section-title{
+  font-size:clamp(1.75rem,4vw,2.8rem);
+  font-weight:700;
+  color:#fff;
+  line-height:1.2;
+  margin-bottom:1.5rem;
+  letter-spacing:-.02em;
+}
+.section-subtitle{
+  font-size:1.05rem;
+  color:#9295a0;
+  max-width:560px;
+  line-height:1.7;
+}
+
+/* --- Nav --- */
+.nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1000;
+  padding:1.2rem 0;
+  transition:background .3s,backdrop-filter .3s,box-shadow .3s;
+}
+.nav.scrolled{
+  background:rgba(10,10,15,.82);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 rgba(255,255,255,.04);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-size:1.15rem;
+  font-weight:700;
+  color:#fff;
+  letter-spacing:-.02em;
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+}
+.logo-icon{
+  width:30px;height:30px;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);
+  border-radius:7px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;
+  color:#fff;
+  font-weight:800;
+}
+.nav-links{display:flex;gap:2.2rem;align-items:center}
+.nav-links a{
+  font-size:.87rem;
+  font-weight:500;
+  color:#9295a0;
+  transition:color .2s;
+}
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  padding:.55rem 1.4rem;
+  background:rgba(139,92,246,.12);
+  border:1px solid rgba(139,92,246,.25);
+  border-radius:7px;
+  color:#a78bfa !important;
+  font-weight:600 !important;
+  font-size:.84rem !important;
+  transition:background .2s,border-color .2s;
+}
+.nav-cta:hover{
+  background:rgba(139,92,246,.2);
+  border-color:rgba(139,92,246,.4);
+}
+
+/* Mobile nav toggle */
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
+.nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;border-radius:2px;transition:transform .3s,opacity .3s}
+
+/* --- Hero --- */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  padding-top:6rem;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-40%;left:50%;
+  transform:translateX(-50%);
+  width:800px;height:800px;
+  background:radial-gradient(circle,rgba(99,102,241,.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(139,92,246,.15),transparent);
+}
+.hero-content{position:relative;z-index:1;max-width:720px}
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.45rem 1rem .45rem .7rem;
+  background:rgba(139,92,246,.08);
+  border:1px solid rgba(139,92,246,.15);
+  border-radius:100px;
+  font-size:.78rem;
+  font-weight:500;
+  color:#a78bfa;
+  margin-bottom:2rem;
+}
+.hero-badge-dot{
+  width:6px;height:6px;
+  background:#8b5cf6;
+  border-radius:50%;
+  animation:pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot{
+  0%,100%{opacity:1}
+  50%{opacity:.4}
+}
+.hero h1{
+  font-size:clamp(2.4rem,6vw,4.2rem);
+  font-weight:800;
+  color:#fff;
+  line-height:1.1;
+  letter-spacing:-.035em;
+  margin-bottom:1.5rem;
+}
+.hero h1 .gradient{
+  background:linear-gradient(135deg,#818cf8,#a78bfa,#c084fc);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero p{
+  font-size:1.15rem;
+  color:#9295a0;
+  max-width:520px;
+  line-height:1.75;
+  margin-bottom:2.5rem;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.9rem 2rem;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);
+  color:#fff;
+  font-weight:600;
+  font-size:.95rem;
+  border-radius:9px;
+  border:none;
+  cursor:pointer;
+  transition:opacity .2s,transform .15s;
+  box-shadow:0 4px 24px rgba(99,102,241,.25);
+}
+.btn-primary:hover{opacity:.9;transform:translateY(-1px)}
+.btn-secondary{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.9rem 2rem;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  color:#e0e0e6;
+  font-weight:600;
+  font-size:.95rem;
+  border-radius:9px;
+  cursor:pointer;
+  transition:background .2s,border-color .2s;
+}
+.btn-secondary:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18)}
+.hero-stats{
+  display:flex;
+  gap:3.5rem;
+  margin-top:4rem;
+  padding-top:2.5rem;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.hero-stat-value{
+  font-size:1.6rem;
+  font-weight:700;
+  color:#fff;
+  letter-spacing:-.02em;
+}
+.hero-stat-label{
+  font-size:.78rem;
+  color:#6b6e7a;
+  margin-top:.2rem;
+  font-weight:500;
+}
+
+/* --- Marquee / Trust --- */
+.trust{
+  padding:3.5rem 0;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  overflow:hidden;
+}
+.trust-label{
+  text-align:center;
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:#4a4d58;
+  margin-bottom:2rem;
+}
+.trust-logos{
+  display:flex;
+  justify-content:center;
+  gap:3.5rem;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.trust-item{
+  font-size:.95rem;
+  font-weight:600;
+  color:#3a3d48;
+  letter-spacing:.02em;
+  white-space:nowrap;
+}
+
+/* --- Products --- */
+#products .section-subtitle{margin-bottom:3.5rem}
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.product-card{
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px;
+  padding:2.2rem;
+  transition:border-color .3s,transform .2s,box-shadow .3s;
+  position:relative;
+  overflow:hidden;
+}
+.product-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(139,92,246,.3),transparent);
+  opacity:0;
+  transition:opacity .3s;
+}
+.product-card:hover{
+  border-color:rgba(139,92,246,.15);
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px rgba(0,0,0,.3);
+}
+.product-card:hover::before{opacity:1}
+.product-icon{
+  width:48px;height:48px;
+  border-radius:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.3rem;
+  margin-bottom:1.5rem;
+}
+.product-icon.purple{background:rgba(139,92,246,.1);color:#a78bfa}
+.product-icon.blue{background:rgba(59,130,246,.1);color:#60a5fa}
+.product-icon.emerald{background:rgba(16,185,129,.1);color:#34d399}
+.product-card h3{
+  font-size:1.15rem;
+  font-weight:650;
+  color:#fff;
+  margin-bottom:.65rem;
+}
+.product-card p{
+  font-size:.92rem;
+  color:#7d8090;
+  line-height:1.65;
+  margin-bottom:1.3rem;
+}
+.product-tag{
+  display:inline-block;
+  padding:.25rem .7rem;
+  background:rgba(139,92,246,.08);
+  border:1px solid rgba(139,92,246,.12);
+  border-radius:5px;
+  font-size:.72rem;
+  font-weight:600;
+  color:#a78bfa;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+/* --- Features --- */
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.5rem;
+  margin-top:3.5rem;
+}
+.feature-card{
+  padding:2.2rem;
+  background:rgba(255,255,255,.015);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:14px;
+  transition:border-color .3s;
+}
+.feature-card:hover{border-color:rgba(255,255,255,.1)}
+.feature-num{
+  font-size:.72rem;
+  font-weight:700;
+  color:#6366f1;
+  letter-spacing:.1em;
+  margin-bottom:1rem;
+}
+.feature-card h3{
+  font-size:1.1rem;
+  font-weight:650;
+  color:#fff;
+  margin-bottom:.5rem;
+}
+.feature-card p{
+  font-size:.9rem;
+  color:#7d8090;
+  line-height:1.65;
+}
+
+/* --- About --- */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  align-items:center;
+  margin-top:3rem;
+}
+.about-text p{
+  color:#9295a0;
+  margin-bottom:1.3rem;
+  line-height:1.75;
+}
+.about-text p:last-child{margin-bottom:0}
+.about-visual{
+  background:linear-gradient(135deg,rgba(99,102,241,.06),rgba(139,92,246,.04));
+  border:1px solid rgba(139,92,246,.08);
+  border-radius:16px;
+  padding:3rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+}
+.about-metric{text-align:center}
+.about-metric-value{
+  font-size:2.2rem;
+  font-weight:800;
+  color:#fff;
+  letter-spacing:-.03em;
+}
+.about-metric-value .accent{color:#8b5cf6}
+.about-metric-label{
+  font-size:.78rem;
+  color:#6b6e7a;
+  margin-top:.25rem;
+  font-weight:500;
+}
+
+/* --- CTA Banner --- */
+.cta-banner{
+  padding:5rem 0;
+  text-align:center;
+}
+.cta-box{
+  background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(139,92,246,.05));
+  border:1px solid rgba(139,92,246,.1);
+  border-radius:20px;
+  padding:4rem 3rem;
+  position:relative;
+  overflow:hidden;
+}
+.cta-box::before{
+  content:'';
+  position:absolute;
+  top:-50%;left:50%;
+  transform:translateX(-50%);
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(139,92,246,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-box h2{
+  font-size:clamp(1.6rem,3.5vw,2.4rem);
+  font-weight:700;
+  color:#fff;
+  margin-bottom:1rem;
+  position:relative;
+}
+.cta-box p{
+  color:#9295a0;
+  font-size:1.05rem;
+  max-width:460px;
+  margin:0 auto 2rem;
+  position:relative;
+}
+.cta-box .btn-primary{position:relative}
+
+/* --- Contact --- */
+#contact .section-subtitle{margin-bottom:3rem}
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.contact-card{
+  padding:2rem;
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;
+  text-align:center;
+  transition:border-color .3s;
+}
+.contact-card:hover{border-color:rgba(139,92,246,.15)}
+.contact-card-icon{
+  font-size:1.4rem;
+  margin-bottom:1rem;
+}
+.contact-card h3{
+  font-size:.95rem;
+  font-weight:600;
+  color:#fff;
+  margin-bottom:.4rem;
+}
+.contact-card p{
+  font-size:.88rem;
+  color:#7d8090;
+}
+.contact-card a{
+  color:#a78bfa;
+  transition:color .2s;
+}
+.contact-card a:hover{color:#c4b5fd}
+
+/* --- Footer --- */
+.footer{
+  padding:3rem 0;
+  border-top:1px solid rgba(255,255,255,.05);
+}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+.footer-copy{font-size:.82rem;color:#4a4d58}
+.footer-links{display:flex;gap:2rem}
+.footer-links a{font-size:.82rem;color:#5a5d68;transition:color .2s}
+.footer-links a:hover{color:#9295a0}
+
+/* --- Responsive --- */
+@media(max-width:968px){
+  .products-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero-stats{gap:2rem}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .container{padding:0 1.3rem}
+  .section{padding:5rem 0}
+  .hero{min-height:auto;padding:8rem 0 5rem}
+  .hero-stats{flex-direction:column;gap:1.2rem}
+  .products-grid{grid-template-columns:1fr}
+  .features-grid{grid-template-columns:1fr}
+  .about-visual{grid-template-columns:1fr 1fr;padding:2rem}
+  .cta-box{padding:3rem 1.5rem}
+  .nav-links{
+    position:fixed;
+    top:0;right:0;bottom:0;
+    width:280px;
+    background:rgba(10,10,15,.97);
+    backdrop-filter:blur(20px);
+    flex-direction:column;
+    padding:5rem 2rem 2rem;
+    gap:1.5rem;
+    transform:translateX(100%);
+    transition:transform .3s ease;
+    border-left:1px solid rgba(255,255,255,.06);
+  }
+  .nav-links.open{transform:translateX(0)}
+  .nav-toggle{display:block}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== NAVIGATION ====== -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">A</div>
+      Apex Digital
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="https://apexdigitalhq.lemonsqueezy.com" target="_blank" rel="noopener" class="nav-cta">Visit Store →</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Now available on Lemon Squeezy
+      </div>
+      <h1>Digital tools built for those who <span class="gradient">build the future.</span></h1>
+      <p>Apex Digital creates AI-powered tools and premium digital products that help entrepreneurs move faster, operate smarter, and scale without the overhead.</p>
+      <div class="hero-actions">
+        <a href="https://apexdigitalhq.lemonsqueezy.com" target="_blank" rel="noopener" class="btn-primary">Browse Products →</a>
+        <a href="#about" class="btn-secondary">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-value">AI-First</div>
+          <div class="hero-stat-label">Product Philosophy</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">Premium</div>
+          <div class="hero-stat-label">Quality Standard</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">Instant</div>
+          <div class="hero-stat-label">Digital Delivery</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TRUST ====== -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-label">Built with industry-leading technologies</div>
+    <div class="trust-logos">
+      <span class="trust-item">OpenAI</span>
+      <span class="trust-item">Python</span>
+      <span class="trust-item">Node.js</span>
+      <span class="trust-item">React</span>
+      <span class="trust-item">Stripe</span>
+      <span class="trust-item">Lemon Squeezy</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PRODUCTS ====== -->
+<section class="section" id="products">
+  <div class="container">
+    <span class="section-label">Products &amp; Services</span>
+    <h2 class="section-title">Tools that work as hard as you do.</h2>
+    <p class="section-subtitle">Every product we ship is designed to solve a real problem — no fluff, no bloat. Just sharp tools for sharp operators.</p>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-icon purple">⚡</div>
+        <h3>AI Automation Kits</h3>
+        <p>Pre-built automation workflows powered by AI that handle repetitive tasks, content generation, and data processing — so you can focus on growth.</p>
+        <span class="product-tag">AI-Powered</span>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon blue">◈</div>
+        <h3>Digital Business Templates</h3>
+        <p>Production-ready templates for dashboards, landing pages, and internal tools. Professionally designed, fully customizable, and built to convert.</p>
+        <span class="product-tag">Templates</span>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon emerald">⬡</div>
+        <h3>Entrepreneur Toolkits</h3>
+        <p>Curated bundles of spreadsheets, SOPs, planners, and frameworks used by real operators to launch, manage, and scale digital businesses.</p>
+        <span class="product-tag">Bundles</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== FEATURES ====== -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Why Apex Digital</span>
+    <h2 class="section-title">Built different. On purpose.</h2>
+    <p class="section-subtitle">We don't ship half-baked products. Every release meets a standard most brands won't commit to.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3>No Subscriptions, No Lock-In</h3>
+        <p>Buy once, own forever. Every product is a one-time purchase with lifetime access and free updates.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3>AI-Native by Design</h3>
+        <p>Our tools are built around AI from the ground up — not bolted on as an afterthought. Smarter workflows, better output.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3>Instant Digital Delivery</h3>
+        <p>No waiting. Every purchase is delivered instantly through our secure storefront. Download, deploy, and start using immediately.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">04</div>
+        <h3>Built for Real Operators</h3>
+        <p>We build for entrepreneurs who ship, not dreamers who browse. Practical tools with real documentation and support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ABOUT ====== -->
+<section class="section" id="about">
+  <div class="container">
+    <span class="section-label">About</span>
+    <h2 class="section-title">The company behind the tools.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Apex Digital builds premium digital tools for entrepreneurs and businesses. We exist because we got tired of overpriced software subscriptions and underdelivering SaaS products that promise the world and ship a landing page.</p>
+        <p>Every product in our catalog is something we've either built for our own use or designed to solve a problem we've personally faced while running businesses. That's the filter — if we wouldn't use it ourselves, we don't sell it.</p>
+        <p>We focus on AI-powered automation, business templates, and digital toolkits that help founders and operators move with speed and precision. No venture funding, no bloated teams — just sharp products shipped fast.</p>
+      </div>
+      <div class="about-visual">
+        <div class="about-metric">
+          <div class="about-metric-value">100<span class="accent">%</span></div>
+          <div class="about-metric-label">Digital Products</div>
+        </div>
+        <div class="about-metric">
+          <div class="about-metric-value"><span class="accent">AI</span>-First</div>
+          <div class="about-metric-label">Development Approach</div>
+        </div>
+        <div class="about-metric">
+          <div class="about-metric-value">1x</div>
+          <div class="about-metric-label">Purchase. Lifetime Access</div>
+        </div>
+        <div class="about-metric">
+          <div class="about-metric-value"><span class="accent">0</span></div>
+          <div class="about-metric-label">Subscriptions Required</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Ready to work smarter?</h2>
+      <p>Browse our full catalog of AI-powered tools and digital products on our store.</p>
+      <a href="https://apexdigitalhq.lemonsqueezy.com" target="_blank" rel="noopener" class="btn-primary">Visit the Store →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONTACT ====== -->
+<section class="section" id="contact">
+  <div class="container">
+    <span class="section-label">Contact</span>
+    <h2 class="section-title">Let's connect.</h2>
+    <p class="section-subtitle">Have a question, partnership inquiry, or just want to say hello? We'd love to hear from you.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-card-icon">✉</div>
+        <h3>Email</h3>
+        <p><a href="mailto:zeusally@proton.me">zeusally@proton.me</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">◆</div>
+        <h3>Store</h3>
+        <p><a href="https://apexdigitalhq.lemonsqueezy.com" target="_blank" rel="noopener">apexdigitalhq.lemonsqueezy.com</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">⌘</div>
+        <h3>Website</h3>
+        <p><a href="https://apexdigitalhq.com">apexdigitalhq.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">© 2025 Apex Digital. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="https://apexdigitalhq.lemonsqueezy.com" target="_blank" rel="noopener">Store</a>
+      <a href="mailto:zeusally@proton.me">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ====== SCRIPTS ====== -->
+<script>
+// Nav scroll effect
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});
+
+// Mobile menu
+const toggle=document.getElementById('navToggle');
+const links=document.getElementById('navLinks');
+toggle.addEventListener('click',()=>{
+  links.classList.toggle('open');
+  const spans=toggle.querySelectorAll('span');
+  if(links.classList.contains('open')){
+    spans[0].style.transform='rotate(45deg) translate(5px,5px)';
+    spans[1].style.opacity='0';
+    spans[2].style.transform='rotate(-45deg) translate(5px,-5px)';
+  }else{
+    spans[0].style.transform='';spans[1].style.opacity='';spans[2].style.transform='';
+  }
+});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  links.classList.remove('open');
+  const spans=toggle.querySelectorAll('span');
+  spans[0].style.transform='';spans[1].style.opacity='';spans[2].style.transform='';
+}));
+
+// Fade-in on scroll
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}});
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.product-card,.feature-card,.contact-card,.about-visual').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(20px)';
+  el.style.transition='opacity .6s ease,transform .6s ease';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
