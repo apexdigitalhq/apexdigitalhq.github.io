@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairo — Focus Timer for iOS | Apex Digital</title>
+<meta name="description" content="Kairo is the focus timer that fights back. Motion-based distraction detection, intelligent scoring, and an AI Focus Coach. Coming soon to the App Store.">
+<meta name="theme-color" content="#FF4D2E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='28' height='28' x='2' y='4' rx='7' fill='%230A0A0A'/%3E%3Cpolygon points='16,9 11,22 21,22' fill='none' stroke='%23FF4D2E' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <svg viewBox="0 0 32 32" fill="none">
+        <rect width="28" height="28" x="2" y="4" rx="7" fill="#161616" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <polygon points="16,10 10.5,23 21.5,23" fill="none" stroke="#FF4D2E" stroke-width="2.2" stroke-linejoin="round"/>
+      </svg>
+      Apex Digital
+    </a>
+    <button class="nav__toggle" onclick="document.querySelector('.nav__links').classList.toggle('open')" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="kairo.html" class="active">Kairo</a></li>
+      <li><a href="toolkit.html">AI Toolkit</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="product-hero">
+  <div class="container">
+    <div class="product-hero__grid">
+      <div class="product-hero__content">
+        <div style="margin-bottom: 20px;">
+          <span class="badge badge--accent">Coming Soon to the App Store</span>
+        </div>
+        <h1>Kairo — Focus Timer</h1>
+        <p class="text-muted" style="font-size: 1.2rem; font-weight: 500; margin-bottom: 8px;">Deep Work. Real Results.</p>
+        <p>The focus timer that fights back. Kairo detects when you pick up your phone during a session, penalizes distractions, and trains you to build an unbreakable focus habit.</p>
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <span class="badge badge--neutral">Free</span>
+          <span class="badge badge--neutral">iOS</span>
+          <span class="badge badge--neutral">Privacy-First</span>
+        </div>
+      </div>
+      <div class="product-hero__visual">
+        <img src="products/ios-apps/kairo/screenshots/appstore/final/01_home_final.png" alt="Kairo App - Home Screen" style="max-height: 520px; border-radius: 24px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCREENSHOTS ═══ -->
+<section style="background: var(--bg-elevated);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>See Kairo in Action</h2>
+      <p>Every detail designed to keep you locked in.</p>
+    </div>
+    <div class="screenshots fade-in">
+      <img src="products/ios-apps/kairo/screenshots/appstore/final/01_home_final.png" alt="Kairo Home Screen" loading="lazy">
+      <img src="products/ios-apps/kairo/screenshots/appstore/final/02_session_final.png" alt="Kairo Focus Session" loading="lazy">
+      <img src="products/ios-apps/kairo/screenshots/appstore/final/03_shield_final.png" alt="Kairo Focus Shield" loading="lazy">
+      <img src="products/ios-apps/kairo/screenshots/appstore/final/04_stats_final.png" alt="Kairo Statistics" loading="lazy">
+      <img src="products/ios-apps/kairo/screenshots/appstore/final/05_settings_final.png" alt="Kairo Settings" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Features That Actually Help</h2>
+      <p>Not another pretty timer. Kairo is built to change your relationship with focus.</p>
+    </div>
+
+    <div class="feature-grid fade-in">
+      <div class="feature-item">
+        <span class="feature-item__icon">🛡️</span>
+        <h3 class="feature-item__title">Focus Shield</h3>
+        <p class="feature-item__desc">Leave the app during a focus session? Kairo knows. The Focus Shield activates instantly — showing your away time, scoring the penalty, and challenging you to recommit. Accountability you can't cheat.</p>
+      </div>
+
+      <div class="feature-item">
+        <span class="feature-item__icon">⏱️</span>
+        <h3 class="feature-item__title">Intelligent Timer</h3>
+        <p class="feature-item__desc">Deep Work, Light Work, and Creative session modes. Customizable durations from 5 to 120 minutes. Smart break suggestions based on your patterns. Automatic session scoring from 0-100.</p>
+      </div>
+
+      <div class="feature-item">
+        <span class="feature-item__icon">📊</span>
+        <h3 class="feature-item__title">Focus Score</h3>
+        <p class="feature-item__desc">Every session gets a score based on duration, distraction count, and completion. Watch your daily score climb as your focus improves. The numbers don't lie — and neither does Kairo.</p>
+      </div>
+
+      <div class="feature-item">
+        <span class="feature-item__icon">🔥</span>
+        <h3 class="feature-item__title">Streaks & Habits</h3>
+        <p class="feature-item__desc">Daily focus streaks to build consistency. Session history with detailed breakdowns. Pattern analysis that learns your peak focus times. Weekly insights that actually help.</p>
+      </div>
+
+      <div class="feature-item">
+        <span class="feature-item__icon">🧠</span>
+        <h3 class="feature-item__title">Focus Coach</h3>
+        <p class="feature-item__desc">Built-in intelligence analyzes your focus patterns and provides personalized recommendations — when to schedule deep work, how to reduce distractions, and what's actually working.</p>
+      </div>
+
+      <div class="feature-item">
+        <span class="feature-item__icon">🔒</span>
+        <h3 class="feature-item__title">Privacy-First</h3>
+        <p class="feature-item__desc">Zero data collection. No accounts, no sign-ups, no tracking. No third-party SDKs or analytics. No ads. Ever. Everything stays on your device.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUILT FOR IOS ═══ -->
+<section style="background: var(--bg-elevated);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Built for iOS</h2>
+      <p>Native SwiftUI from the ground up. No compromises.</p>
+    </div>
+    <div class="grid grid--3 fade-in">
+      <div class="card" style="text-align: center; padding: 28px;">
+        <div style="font-size: 2rem; margin-bottom: 12px;">📱</div>
+        <h4>Home &amp; Lock Screen Widgets</h4>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 8px;">Your focus stats always visible, right where you need them.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 28px;">
+        <div style="font-size: 2rem; margin-bottom: 12px;">📅</div>
+        <h4>Calendar Integration</h4>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 8px;">Schedule focus sessions directly to your iOS Calendar.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 28px;">
+        <div style="font-size: 2rem; margin-bottom: 12px;">🏝️</div>
+        <h4>Dynamic Island</h4>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 8px;">See your timer and focus state right in the Dynamic Island.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 28px;">
+        <div style="font-size: 2rem; margin-bottom: 12px;">🎨</div>
+        <h4>60fps Animations</h4>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 8px;">Smooth, buttery native SwiftUI throughout the entire app.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 28px;">
+        <div style="font-size: 2rem; margin-bottom: 12px;">🌙</div>
+        <h4>Dark Mode Native</h4>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 8px;">Designed dark-first, because focus deserves it.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 28px;">
+        <div style="font-size: 2rem; margin-bottom: 12px;">📳</div>
+        <h4>Haptic Feedback</h4>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 8px;">Tactile responses that feel as premium as the experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHO IT'S FOR ═══ -->
+<section>
+  <div class="container container--narrow">
+    <div class="section-header fade-in">
+      <h2>Who Kairo Is For</h2>
+    </div>
+    <div class="fade-in" style="display: grid; gap: 16px;">
+      <div class="card" style="padding: 20px 24px; display: flex; align-items: center; gap: 16px;">
+        <span style="font-size: 1.3rem;">💻</span>
+        <p style="margin: 0; color: var(--text-secondary);"><strong style="color: var(--white);">Developers & Designers</strong> who need deep focus blocks to write code or create.</p>
+      </div>
+      <div class="card" style="padding: 20px 24px; display: flex; align-items: center; gap: 16px;">
+        <span style="font-size: 1.3rem;">📚</span>
+        <p style="margin: 0; color: var(--text-secondary);"><strong style="color: var(--white);">Students</strong> who want to study without the phone pulling them away.</p>
+      </div>
+      <div class="card" style="padding: 20px 24px; display: flex; align-items: center; gap: 16px;">
+        <span style="font-size: 1.3rem;">✍️</span>
+        <p style="margin: 0; color: var(--text-secondary);"><strong style="color: var(--white);">Writers & Creators</strong> who need uninterrupted creative flow.</p>
+      </div>
+      <div class="card" style="padding: 20px 24px; display: flex; align-items: center; gap: 16px;">
+        <span style="font-size: 1.3rem;">🚀</span>
+        <p style="margin: 0; color: var(--text-secondary);"><strong style="color: var(--white);">Entrepreneurs</strong> who know that focus is their competitive advantage.</p>
+      </div>
+      <div class="card" style="padding: 20px 24px; display: flex; align-items: center; gap: 16px;">
+        <span style="font-size: 1.3rem;">🧘</span>
+        <p style="margin: 0; color: var(--text-secondary);"><strong style="color: var(--white);">Anyone</strong> tired of lying to themselves about being "productive."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box fade-in">
+      <div class="app-icon" style="margin: 0 auto 24px;">⏱️</div>
+      <h2>Coming Soon to the App Store</h2>
+      <p>Kairo is currently in App Store review. Follow us on X to be the first to know when it drops.</p>
+      <div class="hero__actions">
+        <a href="https://x.com/ApexdigitaHQ" target="_blank" rel="noopener" class="btn btn--primary btn--large">Follow @ApexdigitaHQ</a>
+      </div>
+      <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-muted);">Free download · Optional Pro upgrade · Privacy-first</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__social">
+      <a href="https://x.com/ApexdigitaHQ" target="_blank" rel="noopener" aria-label="X / Twitter">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="mailto:zeusally@proton.me" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+      </a>
+    </div>
+    <div class="footer__links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="kairo.html">Kairo</a>
+      <a href="toolkit.html">AI Toolkit</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="kairo-privacy.html">Privacy</a>
+    </div>
+    <p class="footer__copy">© 2026 Apex Digital. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.nav__links a').forEach(link => {
+  link.addEventListener('click', () => document.querySelector('.nav__links').classList.remove('open'));
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

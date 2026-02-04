@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Apex Digital</title>
+<meta name="description" content="Get in touch with Apex Digital. Questions, support, partnerships — we'd love to hear from you.">
+<meta name="theme-color" content="#FF4D2E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='28' height='28' x='2' y='4' rx='7' fill='%230A0A0A'/%3E%3Cpolygon points='16,9 11,22 21,22' fill='none' stroke='%23FF4D2E' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <svg viewBox="0 0 32 32" fill="none">
+        <rect width="28" height="28" x="2" y="4" rx="7" fill="#161616" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <polygon points="16,10 10.5,23 21.5,23" fill="none" stroke="#FF4D2E" stroke-width="2.2" stroke-linejoin="round"/>
+      </svg>
+      Apex Digital
+    </a>
+    <button class="nav__toggle" onclick="document.querySelector('.nav__links').classList.toggle('open')" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="kairo.html">Kairo</a></li>
+      <li><a href="toolkit.html">AI Toolkit</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__badge">
+      <span class="badge badge--accent">Get In Touch</span>
+    </div>
+    <h1 class="hero__title">Let's <span class="text-accent">Talk</span></h1>
+    <p class="hero__subtitle">Questions, feedback, partnership ideas, or just want to say hey — we're real people and we actually read our messages.</p>
+  </div>
+</section>
+
+<!-- ═══ CONTACT INFO ═══ -->
+<section>
+  <div class="container" style="max-width: 640px;">
+    <div style="display: grid; gap: 20px;" class="fade-in">
+
+      <!-- Email -->
+      <a href="mailto:zeusally@proton.me" style="text-decoration: none;">
+        <div class="contact-card">
+          <div class="contact-card__icon">✉️</div>
+          <div>
+            <div class="contact-card__label">Email</div>
+            <div class="contact-card__value">zeusally@proton.me</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- X / Twitter -->
+      <a href="https://x.com/ApexdigitaHQ" target="_blank" rel="noopener" style="text-decoration: none;">
+        <div class="contact-card">
+          <div class="contact-card__icon">
+            <svg viewBox="0 0 24 24" fill="var(--accent)" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </div>
+          <div>
+            <div class="contact-card__label">X / Twitter</div>
+            <div class="contact-card__value">@ApexdigitaHQ</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Website -->
+      <a href="https://apexdigitalhq.github.io" style="text-decoration: none;">
+        <div class="contact-card">
+          <div class="contact-card__icon">🌐</div>
+          <div>
+            <div class="contact-card__label">Website</div>
+            <div class="contact-card__value">apexdigitalhq.github.io</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT TO REACH OUT ABOUT ═══ -->
+<section style="background: var(--bg-elevated);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>How Can We Help?</h2>
+    </div>
+    <div class="grid grid--3 fade-in">
+      <div class="feature-item">
+        <span class="feature-item__icon">🛠️</span>
+        <h3 class="feature-item__title">Product Support</h3>
+        <p class="feature-item__desc">Questions about the AI Prompt Toolkit, Kairo, or any of our products? We're here to help you get the most out of your purchase.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-item__icon">🤝</span>
+        <h3 class="feature-item__title">Partnerships</h3>
+        <p class="feature-item__desc">Interested in collaborating, co-promoting, or building something together? Let's explore how we can create value.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-item__icon">💡</span>
+        <h3 class="feature-item__title">Feedback & Ideas</h3>
+        <p class="feature-item__desc">Have a product idea or feature request? We build for operators — your input directly shapes what we create next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESPONSE TIME ═══ -->
+<section>
+  <div class="container container--narrow">
+    <div class="cta-box fade-in" style="text-align: center;">
+      <h3 style="margin-bottom: 12px;">We Actually Respond</h3>
+      <p style="color: var(--text-secondary); font-size: 0.95rem;">No bots, no auto-responders, no ticket queues. Real humans reading real messages. We typically respond within 24 hours — often much faster.</p>
+      <a href="mailto:zeusally@proton.me" class="btn btn--primary" style="margin-top: 20px;">Send Us an Email</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__social">
+      <a href="https://x.com/ApexdigitaHQ" target="_blank" rel="noopener" aria-label="X / Twitter">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="mailto:zeusally@proton.me" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+      </a>
+    </div>
+    <div class="footer__links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="kairo.html">Kairo</a>
+      <a href="toolkit.html">AI Toolkit</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="kairo-privacy.html">Privacy</a>
+    </div>
+    <p class="footer__copy">© 2026 Apex Digital. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.nav__links a').forEach(link => {
+  link.addEventListener('click', () => document.querySelector('.nav__links').classList.remove('open'));
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
