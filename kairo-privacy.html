@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kairo – Privacy Policy</title>
+    <style>
+        :root {
+            --bg: #0F0F19;
+            --surface: #1A1A2E;
+            --text: #E8E8EC;
+            --text-muted: #9A9AB0;
+            --accent: #E94560;
+            --border: #2A2A3E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .header .accent {
+            color: var(--accent);
+        }
+
+        .header .updated {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: var(--surface);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        .no-collect-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 16px;
+            margin: 16px 0 24px;
+        }
+
+        .no-collect-grid .item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .no-collect-grid .icon {
+            color: #4ADE80;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 20px 60px;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .no-collect-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><span class="accent">Kairo</span> — Privacy Policy</h1>
+            <p class="updated">Last Updated: February 3, 2026</p>
+        </div>
+
+        <h2>Overview</h2>
+        <p>Kairo ("the App") is a focus timer app developed by Apex Digital. Your privacy is important to us. This policy explains what data Kairo collects, how it's used, and your rights.</p>
+
+        <div class="highlight-box">
+            <p>Kairo does not collect, store, or transmit any personal data to external servers. All data stays on your device.</p>
+        </div>
+
+        <h2>Data Collection</h2>
+        <p>All information remains exclusively on your device:</p>
+        <ul>
+            <li><strong>Focus session data</strong> (duration, scores, timestamps) — stored locally using Core Data</li>
+            <li><strong>Goals and preferences</strong> — stored locally using UserDefaults</li>
+            <li><strong>Calendar events</strong> — created only with your explicit permission via Apple's EventKit, stored in your iOS Calendar</li>
+            <li><strong>Motion data</strong> — used only for pickup detection during focus sessions, never stored or transmitted</li>
+            <li><strong>Notification preferences</strong> — managed locally through iOS notification system</li>
+        </ul>
+
+        <h2>What We Don't Collect</h2>
+        <div class="no-collect-grid">
+            <div class="item"><span class="icon">✓</span> No account creation required</div>
+            <div class="item"><span class="icon">✓</span> No email addresses</div>
+            <div class="item"><span class="icon">✓</span> No names or personal identifiers</div>
+            <div class="item"><span class="icon">✓</span> No location data</div>
+            <div class="item"><span class="icon">✓</span> No usage analytics or telemetry</div>
+            <div class="item"><span class="icon">✓</span> No advertising identifiers</div>
+            <div class="item"><span class="icon">✓</span> No data shared with third parties</div>
+            <div class="item"><span class="icon">✓</span> No cloud sync or server communication</div>
+        </div>
+
+        <h2>Permissions</h2>
+        <p>Kairo may request the following permissions, all optional:</p>
+        <ul>
+            <li><strong>Notifications</strong> — To send focus reminders, session completion alerts, and streak notifications</li>
+            <li><strong>Calendar Access</strong> — To schedule focus sessions on your iOS Calendar and set reminders</li>
+            <li><strong>Motion &amp; Fitness</strong> — To detect phone pickups during focus sessions (distraction tracking)</li>
+        </ul>
+        <p>You can revoke any permission at any time through iOS Settings.</p>
+
+        <h2>Data Storage</h2>
+        <p>All data is stored exclusively on your device. If you delete the app, all data is permanently removed. There is no cloud backup of Kairo data.</p>
+
+        <h2>Children's Privacy</h2>
+        <p>Kairo does not knowingly collect any information from children under 13. The app contains no age-restricted content and does not require any personal information to use.</p>
+
+        <h2>Third-Party Services</h2>
+        <p>Kairo uses <strong>no third-party SDKs, analytics tools, or advertising frameworks</strong>. The app is entirely self-contained.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time. Any changes will be reflected in the "Last Updated" date above.</p>
+
+        <h2>Contact</h2>
+        <p>If you have questions about this privacy policy, contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:zeusally@proton.me">zeusally@proton.me</a><br>
+        <strong>Website:</strong> <a href="https://apexdigitalhq.github.io">apexdigitalhq.github.io</a></p>
+
+        <div class="footer">
+            <p>© 2026 Apex Digital. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
