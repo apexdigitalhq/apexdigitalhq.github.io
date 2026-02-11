@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://apexdigitalhq.github.io/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://apexdigitalhq.github.io/ai-prompt-toolkit.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://apexdigitalhq.github.io/ai-automation-playbook.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://apexdigitalhq.github.io/landing-page-kit.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://apexdigitalhq.github.io/startup-toolkit.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://apexdigitalhq.github.io/products.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://apexdigitalhq.github.io/about.html</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://apexdigitalhq.github.io/kairo.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+</urlset>

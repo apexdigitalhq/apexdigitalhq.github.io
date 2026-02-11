@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://apexdigitalhq.github.io/sitemap.xml
