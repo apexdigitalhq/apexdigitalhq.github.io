@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="24A335" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="NO">
+    <entity name="FocusSession" representedClassName="FocusSession" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="startedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="targetDuration" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="actualDuration" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sessionType" attributeType="String"/>
+        <attribute name="status" attributeType="String"/>
+        <attribute name="soundscape" optional="YES" attributeType="String"/>
+        <attribute name="pauseCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="distractionCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="qualityRating" attributeType="String"/>
+        <attribute name="focusScore" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="distractionEvents" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DistractionEvent" inverseName="session" inverseEntity="DistractionEvent"/>
+    </entity>
+    <entity name="DistractionEvent" representedClassName="DistractionEvent" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="sessionID" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="type" attributeType="String"/>
+        <attribute name="durationSeconds" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FocusSession" inverseName="distractionEvents" inverseEntity="FocusSession"/>
+    </entity>
+    <entity name="FocusStreak" representedClassName="FocusStreak" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="startDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="currentLength" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="longestLength" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isActive" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="lastActiveDate" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="DailyScore" representedClassName="DailyScore" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="completionRate" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="qualityFactor" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="consistencyFactor" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="focusScore" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sessionsStarted" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sessionsCompleted" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalFocusMinutes" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bestHour" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dominantType" attributeType="String"/>
+    </entity>
+    <entity name="FocusPattern" representedClassName="FocusPattern" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="optimalDuration" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="bestHourStart" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bestHourEnd" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bestDayOfWeek" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="avgCompletionRate" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="avgSessionsPerDay" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="preferredBreakLength" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="modelVersion" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="modelConfidence" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="ruleEngineActive" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="dataPointCount" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+</model>

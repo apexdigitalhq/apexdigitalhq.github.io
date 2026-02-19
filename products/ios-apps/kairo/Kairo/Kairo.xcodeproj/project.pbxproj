@@ -1,0 +1,1222 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0070E37D2A892EB5ACEC0C64 /* FocusEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E539C76DBE61D0117EC02C5 /* FocusEngine.swift */; };
+		02A9B7A6679620C3A2C369EF /* DistractionEvent+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F734D0951D5AA661F5D13D7 /* DistractionEvent+CoreData.swift */; };
+		07109DE4E658582349A4F018 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F3654DF558EF4C94B37F1 /* HistoryView.swift */; };
+		0D769119B34910A0C0A63B9F /* PatternStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE45F4882A02416F76F691C5 /* PatternStore.swift */; };
+		1134C2EA9D4145C020F6CEE5 /* Date+Kairo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FBF65F4B1D1C3B011BFD77 /* Date+Kairo.swift */; };
+		114937F91B605F8412AADA25 /* TimeInterval+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC9C0BC7DF4E6C9003E4A9C /* TimeInterval+Display.swift */; };
+		1165949FC823049238272096 /* BreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E6A809B4313ACABBA8349 /* BreakView.swift */; };
+		1A09AA743ACC2BEAB4DC1446 /* WidgetDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689CA11C75202EEE7B777DF /* WidgetDataProvider.swift */; };
+		1AE9886E65620187D0E14A31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54392C4EA0C1AFF11B62AD7A /* ContentView.swift */; };
+		1BC9A5D8372413BBA2169C17 /* FocusSession+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4001D516A7F5275142278C3D /* FocusSession+CoreData.swift */; };
+		23E68E7CF05BEE67E352F3C5 /* KairoWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FF533D0653FE2A4FA01BAB68 /* KairoWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2CFF91E14CDCD2AFB5D6302F /* SessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85319829D51CFCB2F1EF2F /* SessionCoordinator.swift */; };
+		2D8C9C08F17C81DEE3457F25 /* nature.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9860FD000FE4F8B6345C5D0B /* nature.m4a */; };
+		2DE924B8EA3E991F28545394 /* TimeInterval+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC9C0BC7DF4E6C9003E4A9C /* TimeInterval+Display.swift */; };
+		2E5EE3DFD922DFFA13EC2BC4 /* StreakWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939FFA20628D428F683A52E /* StreakWidget.swift */; };
+		3836DCDEBB40990B5DCF2674 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA631DEB204FA3B895D8CB /* SessionStore.swift */; };
+		3AF02290A8EBA3E0E24F7338 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584CBE1AF7B4DB88B161C08A /* NotificationManager.swift */; };
+		41AACD6734DDFEA1875325FD /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D0E9CF002F4B72E8045CB /* SoundPickerView.swift */; };
+		46F9049957E220DBAA5CCF3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F872507A2112052B01C996E /* AppDelegate.swift */; };
+		477873FBB5C68C92FE273940 /* KairoColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2148DB94FB0A409AEEF7A74 /* KairoColors.swift */; };
+		518C3E859330A6BD83A46DEC /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB8013CF70AA49EC774E50A /* HapticEngine.swift */; };
+		51F5DA952AC078581AAEEBA3 /* DataExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5065F15A47C43A7D3D48A0A4 /* DataExporter.swift */; };
+		5B69B195C811D041D85484A8 /* KairoAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69460D7B673679EF8BBA92B /* KairoAnimations.swift */; };
+		5B80F759A9CB43B392265022 /* KairoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEBC45D85F4D04487EEBAE5 /* KairoTheme.swift */; };
+		63AF3E5FAFA06E04F8A17FBF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED1EE7D340275FAE871C189 /* SettingsView.swift */; };
+		66336791CB8C6B3ED8596BD3 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81670A849231048B47C9BA9E /* Collection+Safe.swift */; };
+		7033B554A79A35B17C6BD11A /* DistractionOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46655A4C5DA98F6FB4C45B7 /* DistractionOverlayView.swift */; };
+		705631A8BBEB9C68001B642F /* InfoPlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1EF3B869F1E56FFD48BF9 /* InfoPlist.swift */; };
+		70ACEAC7B013DEF346C91449 /* KairoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEBC45D85F4D04487EEBAE5 /* KairoTheme.swift */; };
+		72914856FE5905D4E389EE1D /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B75A7E78DE49415FBC687 /* SoundManager.swift */; };
+		7CC4426296633DBAE2C600FD /* KairoColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2148DB94FB0A409AEEF7A74 /* KairoColors.swift */; };
+		7F969ECD2D18E3F148676CEB /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9435534A4EDB79FF52B955C /* PersistenceController.swift */; };
+		8128D69D3B72F42208D38236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D7422642E21CD253AD13B09 /* Assets.xcassets */; };
+		8E88552509F6982FE5BDFE60 /* DailyScore+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40D0BED2D379A5649F986D8 /* DailyScore+CoreData.swift */; };
+		9A49EF890BF7192F7B87454E /* DistractionDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D123CECCF29408FC13620B /* DistractionDetector.swift */; };
+		9FEA15FEA83207F70CBF32D9 /* RuleEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C310F4C65F76522F910AFCDB /* RuleEngine.swift */; };
+		A17C72C9E4FBEA51F607104B /* FocusSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A77893BD04C825C5D6620D9 /* FocusSessionView.swift */; };
+		A9A38E4B6FD2418E0163F412 /* KairoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD09718F7E5B6ED114D6D562 /* KairoWidgetBundle.swift */; };
+		AAB51E263EBCA6160932506F /* white_noise.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 75C770EEE3CFA2EF01C196FC /* white_noise.m4a */; };
+		AA444444444444444444444A /* forest.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AA111111111111111111111A /* forest.m4a */; };
+		AA555555555555555555555A /* ocean.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AA222222222222222222222A /* ocean.m4a */; };
+		AA666666666666666666666A /* coffee_shop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AA333333333333333333333A /* coffee_shop.m4a */; };
+		BB222222222222222222222A /* FocusShieldOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB111111111111111111111A /* FocusShieldOverlay.swift */; };
+		AC3C3A3B03DF304AD7D44711 /* SessionCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C44341322CC9823F690A16 /* SessionCompletionView.swift */; };
+		AE2C3512722413E6938219A0 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C127CC922620E6120464E9 /* StoreManager.swift */; };
+		AE603A04BA1344FD983BF91C /* Kairo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A767B46ED0A3281F1D592D90 /* Kairo.xcdatamodeld */; };
+		B3B5E2619EC21D5359A58C4F /* FocusTimeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418A6478E8C8FDE3FC642DC2 /* FocusTimeWidget.swift */; };
+		B7B6525CABED2D83D3C6436F /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92EBEE9EFAE77B9FC716E4 /* StatsView.swift */; };
+		BA23E6A19AA25D0065EA138D /* InsightsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37906417A85409C3081AC7 /* InsightsCardView.swift */; };
+		BDBA6D611CB17DFB83EB0524 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB275D3834A68F77FB7FC /* MainTabView.swift */; };
+		C2C815BDB948D159AB9DA1CB /* KairoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901935EAFB4892CB533512DB /* KairoApp.swift */; };
+		C4333FACA36EC5AD43AE8B9A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B111A4640E7FD9A4FD3ABA8 /* OnboardingView.swift */; };
+		C5AD83263E16BBD8AB45E634 /* FocusPatternAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781FFE72E8C069139E3B45C /* FocusPatternAnalyzer.swift */; };
+		C5EAC988D962A55ADAEBE3D6 /* KairoTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D1677BD4D0178C052D3068 /* KairoTypography.swift */; };
+		C880E57E306071AF5BDB2C2A /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D8AD31E76F045A56BD5CE /* TimerState.swift */; };
+		C8D5BD15702EAB3330937824 /* FocusStreak+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968435B4E08DECBE0206D426 /* FocusStreak+CoreData.swift */; };
+		CBEC1B8FE22A55665A5277D3 /* KairoAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740627B01DF915F3C748E870 /* KairoAccessibility.swift */; };
+		CDF37DFADECE989F3A91D549 /* rain.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 79D7C7E093129D164DF267AF /* rain.m4a */; };
+		CEA7FDE83591CEC4E724EB43 /* BreakManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFF581CA7531FF889570B5 /* BreakManager.swift */; };
+		D1409C2B18070503A50EE615 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9EB6B1BECD81010C55D4D /* ProgressRing.swift */; };
+		D5726828F686970D9C940C14 /* InsightGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EED27F5615E981D7106C7 /* InsightGenerator.swift */; };
+		D8B10547D59A75E88D4630E8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8912EA93EB6425A7D7EF4B /* HomeView.swift */; };
+		A1B2C3D4E5F6A7B8C9D0E1F3 /* KairoCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A4 /* KairoCalendarView.swift */; };
+		E1F2A3B4C5D6E7F8A9B0C1D2 /* PatternProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6F7A8B9C0D1E2 /* PatternProgressView.swift */; };
+		A2B3C4D5E6F7A8B9C0D1E2F3 /* CustomGoalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* CustomGoalModels.swift */; };
+		C3D4E5F6A7B8C9D0E1F2A3B4 /* CreateGoalSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4F5A6B7C8D9E0F1A2B3C4 /* CreateGoalSheet.swift */; };
+		E4F5A6B7C8D9E0F1A2B3C4D5 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6B7C8D9E0F1A2B3C4D5E6 /* CalendarManager.swift */; };
+		DE0DC782841C4318DF3EDA76 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CD1319B6C4553A94859C4 /* CoreDataManager.swift */; };
+		E21FC4FFFA267DF29E18A25E /* ScoreStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FAB7E6EE7D8718EB7D3B14 /* ScoreStore.swift */; };
+		E5F108A2EA15DEF29414A8FD /* DailyScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093106EC966BE2D71E1546B3 /* DailyScoreCalculator.swift */; };
+		ED82A6CB0DD3EF20B24FF0BE /* AppStoreMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF7C7222BA760CF4C28EADA /* AppStoreMetadata.swift */; };
+		F37B40349288A009C78B91FF /* deep_focus.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A665E1D2C7C24CA1E2BBD69E /* deep_focus.m4a */; };
+		F46A5EE06D1C22C6784DB9CA /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A110662E8B2E4BA6D5935EB /* PaywallView.swift */; };
+		F84507B99D19CDF152F7B333 /* KairoTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D1677BD4D0178C052D3068 /* KairoTypography.swift */; };
+		FC237C4CF0617C566778525A /* WidgetDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689CA11C75202EEE7B777DF /* WidgetDataProvider.swift */; };
+		FCD4039A4FAD1B80CBBA55EA /* FocusPattern+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18264474D57B6FD652E40E2 /* FocusPattern+CoreData.swift */; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* FocusCoach.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3E4F5A6B7C8D9E0F1A2 /* FocusCoach.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A1B2 /* CoachingInsightCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E2F3A4B5C6D7E8F9A0B1C2 /* CoachingInsightCard.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28F0D50E6A585EB4C5F29BF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BAE484607F13FF20567ED85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A601308EDEC2FFE66666AF57;
+			remoteInfo = KairoWidgets;
+		};
+		96B029CEEAD8084CDF5638FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BAE484607F13FF20567ED85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92631A9C59B27ED72FFA931F;
+			remoteInfo = Kairo;
+		};
+		DAFF605A49CD2ECF95D39E37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BAE484607F13FF20567ED85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92631A9C59B27ED72FFA931F;
+			remoteInfo = Kairo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1E45BFF318144E57C4AF5128 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				23E68E7CF05BEE67E352F3C5 /* KairoWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04FAB7E6EE7D8718EB7D3B14 /* ScoreStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreStore.swift; sourceTree = "<group>"; };
+		052BBF93B07581920D71B5FA /* KairoWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KairoWidgets.entitlements; sourceTree = "<group>"; };
+		07D123CECCF29408FC13620B /* DistractionDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistractionDetector.swift; sourceTree = "<group>"; };
+		093106EC966BE2D71E1546B3 /* DailyScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScoreCalculator.swift; sourceTree = "<group>"; };
+		0B8B75A7E78DE49415FBC687 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		0C9DF9F5AFB0847C50D35628 /* KairoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KairoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14F9EB6B1BECD81010C55D4D /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
+		1B3D8AD31E76F045A56BD5CE /* TimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
+		1D85319829D51CFCB2F1EF2F /* SessionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCoordinator.swift; sourceTree = "<group>"; };
+		1E539C76DBE61D0117EC02C5 /* FocusEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusEngine.swift; sourceTree = "<group>"; };
+		29C127CC922620E6120464E9 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		2F872507A2112052B01C996E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		337EED27F5615E981D7106C7 /* InsightGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightGenerator.swift; sourceTree = "<group>"; };
+		3689CA11C75202EEE7B777DF /* WidgetDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataProvider.swift; sourceTree = "<group>"; };
+		3781FFE72E8C069139E3B45C /* FocusPatternAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusPatternAnalyzer.swift; sourceTree = "<group>"; };
+		3BB8013CF70AA49EC774E50A /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
+		3EC6AC85D18660B6D2D4499F /* Kairo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kairo.xcdatamodel; sourceTree = "<group>"; };
+		3ED1EE7D340275FAE871C189 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4001D516A7F5275142278C3D /* FocusSession+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FocusSession+CoreData.swift"; sourceTree = "<group>"; };
+		418A6478E8C8FDE3FC642DC2 /* FocusTimeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimeWidget.swift; sourceTree = "<group>"; };
+		43D1677BD4D0178C052D3068 /* KairoTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KairoTypography.swift; sourceTree = "<group>"; };
+		4A8F3654DF558EF4C94B37F1 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		4C8912EA93EB6425A7D7EF4B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B2C3D4E5F6A7B8C9D0E1F2A4 /* KairoCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KairoCalendarView.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6F7A8B9C0D1E2 /* PatternProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternProgressView.swift; sourceTree = "<group>"; };
+		B2C3D4E5F6A7B8C9D0E1F2A3 /* CustomGoalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGoalModels.swift; sourceTree = "<group>"; };
+		D3E4F5A6B7C8D9E0F1A2B3C4 /* CreateGoalSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalSheet.swift; sourceTree = "<group>"; };
+		F5A6B7C8D9E0F1A2B3C4D5E6 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		5065F15A47C43A7D3D48A0A4 /* DataExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExporter.swift; sourceTree = "<group>"; };
+		54392C4EA0C1AFF11B62AD7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		584CBE1AF7B4DB88B161C08A /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		5B111A4640E7FD9A4FD3ABA8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		5F734D0951D5AA661F5D13D7 /* DistractionEvent+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DistractionEvent+CoreData.swift"; sourceTree = "<group>"; };
+		BB111111111111111111111A /* FocusShieldOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusShieldOverlay.swift; sourceTree = "<group>"; };
+		62C44341322CC9823F690A16 /* SessionCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCompletionView.swift; sourceTree = "<group>"; };
+		6BCFF581CA7531FF889570B5 /* BreakManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakManager.swift; sourceTree = "<group>"; };
+		7177D61B1C241DEDE6D70FA9 /* Kairo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Kairo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		740627B01DF915F3C748E870 /* KairoAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KairoAccessibility.swift; sourceTree = "<group>"; };
+		755CD1319B6C4553A94859C4 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		75C770EEE3CFA2EF01C196FC /* white_noise.m4a */ = {isa = PBXFileReference; path = white_noise.m4a; sourceTree = "<group>"; };
+		AA111111111111111111111A /* forest.m4a */ = {isa = PBXFileReference; path = forest.m4a; sourceTree = "<group>"; };
+		AA222222222222222222222A /* ocean.m4a */ = {isa = PBXFileReference; path = ocean.m4a; sourceTree = "<group>"; };
+		AA333333333333333333333A /* coffee_shop.m4a */ = {isa = PBXFileReference; path = coffee_shop.m4a; sourceTree = "<group>"; };
+		79D7C7E093129D164DF267AF /* rain.m4a */ = {isa = PBXFileReference; path = rain.m4a; sourceTree = "<group>"; };
+		7BEBC45D85F4D04487EEBAE5 /* KairoTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KairoTheme.swift; sourceTree = "<group>"; };
+		81670A849231048B47C9BA9E /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
+		8A110662E8B2E4BA6D5935EB /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		8D7422642E21CD253AD13B09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		901935EAFB4892CB533512DB /* KairoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KairoApp.swift; sourceTree = "<group>"; };
+		92BBB275D3834A68F77FB7FC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		934D0E9CF002F4B72E8045CB /* SoundPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerView.swift; sourceTree = "<group>"; };
+		968435B4E08DECBE0206D426 /* FocusStreak+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FocusStreak+CoreData.swift"; sourceTree = "<group>"; };
+		9860FD000FE4F8B6345C5D0B /* nature.m4a */ = {isa = PBXFileReference; path = nature.m4a; sourceTree = "<group>"; };
+		9939FFA20628D428F683A52E /* StreakWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakWidget.swift; sourceTree = "<group>"; };
+		9A77893BD04C825C5D6620D9 /* FocusSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSessionView.swift; sourceTree = "<group>"; };
+		A665E1D2C7C24CA1E2BBD69E /* deep_focus.m4a */ = {isa = PBXFileReference; path = deep_focus.m4a; sourceTree = "<group>"; };
+		AB37906417A85409C3081AC7 /* InsightsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsCardView.swift; sourceTree = "<group>"; };
+		AD3E6A809B4313ACABBA8349 /* BreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakView.swift; sourceTree = "<group>"; };
+		B18264474D57B6FD652E40E2 /* FocusPattern+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FocusPattern+CoreData.swift"; sourceTree = "<group>"; };
+		B42BE553E1F038D9C9EBEF07 /* Kairo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kairo.entitlements; sourceTree = "<group>"; };
+		B46655A4C5DA98F6FB4C45B7 /* DistractionOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistractionOverlayView.swift; sourceTree = "<group>"; };
+		BAC9C0BC7DF4E6C9003E4A9C /* TimeInterval+Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Display.swift"; sourceTree = "<group>"; };
+		C310F4C65F76522F910AFCDB /* RuleEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleEngine.swift; sourceTree = "<group>"; };
+		C5FA631DEB204FA3B895D8CB /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		C5FBF65F4B1D1C3B011BFD77 /* Date+Kairo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Kairo.swift"; sourceTree = "<group>"; };
+		D69460D7B673679EF8BBA92B /* KairoAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KairoAnimations.swift; sourceTree = "<group>"; };
+		DB92EBEE9EFAE77B9FC716E4 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		E40D0BED2D379A5649F986D8 /* DailyScore+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyScore+CoreData.swift"; sourceTree = "<group>"; };
+		E8A1EF3B869F1E56FFD48BF9 /* InfoPlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPlist.swift; sourceTree = "<group>"; };
+		E9435534A4EDB79FF52B955C /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		EAF7C7222BA760CF4C28EADA /* AppStoreMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreMetadata.swift; sourceTree = "<group>"; };
+		EE45F4882A02416F76F691C5 /* PatternStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternStore.swift; sourceTree = "<group>"; };
+		F2148DB94FB0A409AEEF7A74 /* KairoColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KairoColors.swift; sourceTree = "<group>"; };
+		F5D738C914558086929D739A /* KairoUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KairoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD09718F7E5B6ED114D6D562 /* KairoWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KairoWidgetBundle.swift; sourceTree = "<group>"; };
+		FF533D0653FE2A4FA01BAB68 /* KairoWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = KairoWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1C2D3E4F5A6B7C8D9E0F1A2 /* FocusCoach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusCoach.swift; sourceTree = "<group>"; };
+		D1E2F3A4B5C6D7E8F9A0B1C2 /* CoachingInsightCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachingInsightCard.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		039BE895422718DE32360DC1 /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scoring;
+			sourceTree = "<group>";
+		};
+		0F4C22BC2DB5EE9195B96B85 /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+				093106EC966BE2D71E1546B3 /* DailyScoreCalculator.swift */,
+			);
+			path = Scoring;
+			sourceTree = "<group>";
+		};
+		120B4FFE46A82D5D53506D8A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				755CD1319B6C4553A94859C4 /* CoreDataManager.swift */,
+				E40D0BED2D379A5649F986D8 /* DailyScore+CoreData.swift */,
+				5065F15A47C43A7D3D48A0A4 /* DataExporter.swift */,
+				5F734D0951D5AA661F5D13D7 /* DistractionEvent+CoreData.swift */,
+				B18264474D57B6FD652E40E2 /* FocusPattern+CoreData.swift */,
+				4001D516A7F5275142278C3D /* FocusSession+CoreData.swift */,
+				968435B4E08DECBE0206D426 /* FocusStreak+CoreData.swift */,
+				EE45F4882A02416F76F691C5 /* PatternStore.swift */,
+				E9435534A4EDB79FF52B955C /* PersistenceController.swift */,
+				04FAB7E6EE7D8718EB7D3B14 /* ScoreStore.swift */,
+				C5FA631DEB204FA3B895D8CB /* SessionStore.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		27ED01708C11CAE8E5054446 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7177D61B1C241DEDE6D70FA9 /* Kairo.app */,
+				0C9DF9F5AFB0847C50D35628 /* KairoTests.xctest */,
+				F5D738C914558086929D739A /* KairoUITests.xctest */,
+				FF533D0653FE2A4FA01BAB68 /* KairoWidgets.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A83DC25995487247E633639 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				92BBB275D3834A68F77FB7FC /* MainTabView.swift */,
+				DE7F4D83DB3135804829FB49 /* Analytics */,
+				F77C784DFE1A4C6209FB3439 /* History */,
+				A541977D95D99ACE3D393B04 /* Home */,
+				8E5F794A8B7A689B3726FDA2 /* Insights */,
+				4BF61D82C69968BC209A8B57 /* Onboarding */,
+				99B89723E6C22A51B7F82C3B /* Paywall */,
+				CFB5A1DB7B298743CD245546 /* Privacy */,
+				8827D02145E32239D00971DD /* Session */,
+				DE3A22932F45DB5B37AD8871 /* Settings */,
+				9E4ECD4C36AE11909FEC2C9C /* Shared */,
+				35182BF6029CCF3960A9281D /* Stats */,
+				CBD4FF5A339238FB73D68419 /* Timer */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35182BF6029CCF3960A9281D /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				DB92EBEE9EFAE77B9FC716E4 /* StatsView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		49072573E7D3D60782E01735 = {
+			isa = PBXGroup;
+			children = (
+				D0F146B3EAB1D915C7174F6E /* Kairo */,
+				875AB50FE67B5B964688A190 /* KairoTests */,
+				99AAEC6CF0EC0CD11F5B0789 /* KairoUITests */,
+				70B644A2790343E73A006AA6 /* KairoWidgets */,
+				27ED01708C11CAE8E5054446 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4944643C05F69090D65290C5 /* Distraction */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Distraction;
+			sourceTree = "<group>";
+		};
+		4B51C19CBCFEBEB25014304B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				81670A849231048B47C9BA9E /* Collection+Safe.swift */,
+				C5FBF65F4B1D1C3B011BFD77 /* Date+Kairo.swift */,
+				BAC9C0BC7DF4E6C9003E4A9C /* TimeInterval+Display.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4BF61D82C69968BC209A8B57 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5B111A4640E7FD9A4FD3ABA8 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		53FD1918D993E1D8480C059A /* Monetization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Monetization;
+			sourceTree = "<group>";
+		};
+		585C20F66697F2B57BF521A4 /* Intelligence */ = {
+			isa = PBXGroup;
+			children = (
+				B1C2D3E4F5A6B7C8D9E0F1A2 /* FocusCoach.swift */,
+				3781FFE72E8C069139E3B45C /* FocusPatternAnalyzer.swift */,
+				337EED27F5615E981D7106C7 /* InsightGenerator.swift */,
+				C310F4C65F76522F910AFCDB /* RuleEngine.swift */,
+			);
+			path = Intelligence;
+			sourceTree = "<group>";
+		};
+		670FCA3913DF2368C6F893C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D7422642E21CD253AD13B09 /* Assets.xcassets */,
+				E8A1EF3B869F1E56FFD48BF9 /* InfoPlist.swift */,
+				A767B46ED0A3281F1D592D90 /* Kairo.xcdatamodeld */,
+				9B138FAC760481B960EC894D /* Sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6A3CDCEB40D26FC01C297E08 /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+				07D123CECCF29408FC13620B /* DistractionDetector.swift */,
+				3BB8013CF70AA49EC774E50A /* HapticEngine.swift */,
+			);
+			path = Motion;
+			sourceTree = "<group>";
+		};
+		70B644A2790343E73A006AA6 /* KairoWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				418A6478E8C8FDE3FC642DC2 /* FocusTimeWidget.swift */,
+				FD09718F7E5B6ED114D6D562 /* KairoWidgetBundle.swift */,
+				052BBF93B07581920D71B5FA /* KairoWidgets.entitlements */,
+				9939FFA20628D428F683A52E /* StreakWidget.swift */,
+			);
+			path = KairoWidgets;
+			sourceTree = "<group>";
+		};
+		875AB50FE67B5B964688A190 /* KairoTests */ = {
+			isa = PBXGroup;
+			children = (
+				F34A062626CD10A0EAD7BCA9 /* Data */,
+				D9106F1DB2817E9830A29B01 /* Intelligence */,
+				039BE895422718DE32360DC1 /* Scoring */,
+				F746D10E703F9977A7479DCE /* Timer */,
+			);
+			path = KairoTests;
+			sourceTree = "<group>";
+		};
+		8827D02145E32239D00971DD /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E6A809B4313ACABBA8349 /* BreakView.swift */,
+				B46655A4C5DA98F6FB4C45B7 /* DistractionOverlayView.swift */,
+				9A77893BD04C825C5D6620D9 /* FocusSessionView.swift */,
+				62C44341322CC9823F690A16 /* SessionCompletionView.swift */,
+				934D0E9CF002F4B72E8045CB /* SoundPickerView.swift */,
+				BB111111111111111111111A /* FocusShieldOverlay.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		8E5F794A8B7A689B3726FDA2 /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				D1E2F3A4B5C6D7E8F9A0B1C2 /* CoachingInsightCard.swift */,
+				AB37906417A85409C3081AC7 /* InsightsCardView.swift */,
+			);
+			path = Insights;
+			sourceTree = "<group>";
+		};
+		99AAEC6CF0EC0CD11F5B0789 /* KairoUITests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = KairoUITests;
+			sourceTree = "<group>";
+		};
+		99B89723E6C22A51B7F82C3B /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				8A110662E8B2E4BA6D5935EB /* PaywallView.swift */,
+			);
+			path = Paywall;
+			sourceTree = "<group>";
+		};
+		9B138FAC760481B960EC894D /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A665E1D2C7C24CA1E2BBD69E /* deep_focus.m4a */,
+				9860FD000FE4F8B6345C5D0B /* nature.m4a */,
+				79D7C7E093129D164DF267AF /* rain.m4a */,
+				75C770EEE3CFA2EF01C196FC /* white_noise.m4a */,
+				AA111111111111111111111A /* forest.m4a */,
+				AA222222222222222222222A /* ocean.m4a */,
+				AA333333333333333333333A /* coffee_shop.m4a */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		9E4ECD4C36AE11909FEC2C9C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				14F9EB6B1BECD81010C55D4D /* ProgressRing.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A541977D95D99ACE3D393B04 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4C8912EA93EB6425A7D7EF4B /* HomeView.swift */,
+				B2C3D4E5F6A7B8C9D0E1F2A4 /* KairoCalendarView.swift */,
+				F1A2B3C4D5E6F7A8B9C0D1E2 /* PatternProgressView.swift */,
+				B2C3D4E5F6A7B8C9D0E1F2A3 /* CustomGoalModels.swift */,
+				D3E4F5A6B7C8D9E0F1A2B3C4 /* CreateGoalSheet.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AB8182282F64F2E20628B839 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				29C127CC922620E6120464E9 /* StoreManager.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		B52BB1B0DBEF118D0F452D0D /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				584CBE1AF7B4DB88B161C08A /* NotificationManager.swift */,
+				F5A6B7C8D9E0F1A2B3C4D5E6 /* CalendarManager.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		B606FFD81BEFDF13A1177C5F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3689CA11C75202EEE7B777DF /* WidgetDataProvider.swift */,
+				D7C2C7C9EF3A1A7855E6DD3C /* Audio */,
+				4944643C05F69090D65290C5 /* Distraction */,
+				6A3CDCEB40D26FC01C297E08 /* Motion */,
+				B52BB1B0DBEF118D0F452D0D /* Notifications */,
+				0F4C22BC2DB5EE9195B96B85 /* Scoring */,
+				AB8182282F64F2E20628B839 /* Store */,
+				DEB55E0447550C6222E2D109 /* Timer */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C8D18C7C494E5AD265C16163 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				740627B01DF915F3C748E870 /* KairoAccessibility.swift */,
+				D69460D7B673679EF8BBA92B /* KairoAnimations.swift */,
+				F2148DB94FB0A409AEEF7A74 /* KairoColors.swift */,
+				7BEBC45D85F4D04487EEBAE5 /* KairoTheme.swift */,
+				43D1677BD4D0178C052D3068 /* KairoTypography.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		CBD4FF5A339238FB73D68419 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		CFB5A1DB7B298743CD245546 /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Privacy;
+			sourceTree = "<group>";
+		};
+		D0F146B3EAB1D915C7174F6E /* Kairo */ = {
+			isa = PBXGroup;
+			children = (
+				B42BE553E1F038D9C9EBEF07 /* Kairo.entitlements */,
+				E630847E307C323A2FA3FBA3 /* App */,
+				B606FFD81BEFDF13A1177C5F /* Core */,
+				120B4FFE46A82D5D53506D8A /* Data */,
+				C8D18C7C494E5AD265C16163 /* Design */,
+				4B51C19CBCFEBEB25014304B /* Extensions */,
+				585C20F66697F2B57BF521A4 /* Intelligence */,
+				53FD1918D993E1D8480C059A /* Monetization */,
+				EFA9E50587BCE4A718B46478 /* Privacy */,
+				670FCA3913DF2368C6F893C0 /* Resources */,
+				2A83DC25995487247E633639 /* Views */,
+			);
+			path = Kairo;
+			sourceTree = "<group>";
+		};
+		D7C2C7C9EF3A1A7855E6DD3C /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				0B8B75A7E78DE49415FBC687 /* SoundManager.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		D9106F1DB2817E9830A29B01 /* Intelligence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Intelligence;
+			sourceTree = "<group>";
+		};
+		DE3A22932F45DB5B37AD8871 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3ED1EE7D340275FAE871C189 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DE7F4D83DB3135804829FB49 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		DEB55E0447550C6222E2D109 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				6BCFF581CA7531FF889570B5 /* BreakManager.swift */,
+				1E539C76DBE61D0117EC02C5 /* FocusEngine.swift */,
+				1B3D8AD31E76F045A56BD5CE /* TimerState.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		E630847E307C323A2FA3FBA3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2F872507A2112052B01C996E /* AppDelegate.swift */,
+				EAF7C7222BA760CF4C28EADA /* AppStoreMetadata.swift */,
+				54392C4EA0C1AFF11B62AD7A /* ContentView.swift */,
+				901935EAFB4892CB533512DB /* KairoApp.swift */,
+				1D85319829D51CFCB2F1EF2F /* SessionCoordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EFA9E50587BCE4A718B46478 /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Privacy;
+			sourceTree = "<group>";
+		};
+		F34A062626CD10A0EAD7BCA9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F746D10E703F9977A7479DCE /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		F77C784DFE1A4C6209FB3439 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				4A8F3654DF558EF4C94B37F1 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92631A9C59B27ED72FFA931F /* Kairo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEB7E67CF690A59DA4FD43B9 /* Build configuration list for PBXNativeTarget "Kairo" */;
+			buildPhases = (
+				33F0450028C1FA3C9D71EE43 /* Sources */,
+				7D26F2FFF036CD1108AFEB5A /* Resources */,
+				1E45BFF318144E57C4AF5128 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F40150398D50B0797F5B160 /* PBXTargetDependency */,
+			);
+			name = Kairo;
+			packageProductDependencies = (
+			);
+			productName = Kairo;
+			productReference = 7177D61B1C241DEDE6D70FA9 /* Kairo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A601308EDEC2FFE66666AF57 /* KairoWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E501D6312ECB0DFEBE25779 /* Build configuration list for PBXNativeTarget "KairoWidgets" */;
+			buildPhases = (
+				470A4A5E9144B63D8B803CB3 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KairoWidgets;
+			packageProductDependencies = (
+			);
+			productName = KairoWidgets;
+			productReference = FF533D0653FE2A4FA01BAB68 /* KairoWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		AD7F0BA87190E437BE83FBEE /* KairoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B595245816406F78D12B591 /* Build configuration list for PBXNativeTarget "KairoTests" */;
+			buildPhases = (
+				1E5B9B1E5ABD235D2F00562B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC5850232477D2DCB9454ABD /* PBXTargetDependency */,
+			);
+			name = KairoTests;
+			packageProductDependencies = (
+			);
+			productName = KairoTests;
+			productReference = 0C9DF9F5AFB0847C50D35628 /* KairoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C03A5DE22CE4CF26D76F7643 /* KairoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 939F71B13156C832C368D410 /* Build configuration list for PBXNativeTarget "KairoUITests" */;
+			buildPhases = (
+				195D0DD1DDB2973504CF8B8C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5D4999D354FB867C382A89C /* PBXTargetDependency */,
+			);
+			name = KairoUITests;
+			packageProductDependencies = (
+			);
+			productName = KairoUITests;
+			productReference = F5D738C914558086929D739A /* KairoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BAE484607F13FF20567ED85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					92631A9C59B27ED72FFA931F = {
+						DevelopmentTeam = WWZMACL428;
+						ProvisioningStyle = Automatic;
+					};
+					A601308EDEC2FFE66666AF57 = {
+						DevelopmentTeam = WWZMACL428;
+						ProvisioningStyle = Automatic;
+					};
+					AD7F0BA87190E437BE83FBEE = {
+						DevelopmentTeam = WWZMACL428;
+						ProvisioningStyle = Automatic;
+					};
+					C03A5DE22CE4CF26D76F7643 = {
+						DevelopmentTeam = WWZMACL428;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 92631A9C59B27ED72FFA931F;
+					};
+				};
+			};
+			buildConfigurationList = AC1ED10F3BC8AC0020A66B51 /* Build configuration list for PBXProject "Kairo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 49072573E7D3D60782E01735;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92631A9C59B27ED72FFA931F /* Kairo */,
+				AD7F0BA87190E437BE83FBEE /* KairoTests */,
+				C03A5DE22CE4CF26D76F7643 /* KairoUITests */,
+				A601308EDEC2FFE66666AF57 /* KairoWidgets */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D26F2FFF036CD1108AFEB5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8128D69D3B72F42208D38236 /* Assets.xcassets in Resources */,
+				F37B40349288A009C78B91FF /* deep_focus.m4a in Resources */,
+				2D8C9C08F17C81DEE3457F25 /* nature.m4a in Resources */,
+				CDF37DFADECE989F3A91D549 /* rain.m4a in Resources */,
+				AAB51E263EBCA6160932506F /* white_noise.m4a in Resources */,
+				AA444444444444444444444A /* forest.m4a in Resources */,
+				AA555555555555555555555A /* ocean.m4a in Resources */,
+				AA666666666666666666666A /* coffee_shop.m4a in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		195D0DD1DDB2973504CF8B8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E5B9B1E5ABD235D2F00562B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33F0450028C1FA3C9D71EE43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46F9049957E220DBAA5CCF3B /* AppDelegate.swift in Sources */,
+				ED82A6CB0DD3EF20B24FF0BE /* AppStoreMetadata.swift in Sources */,
+				CEA7FDE83591CEC4E724EB43 /* BreakManager.swift in Sources */,
+				1165949FC823049238272096 /* BreakView.swift in Sources */,
+				66336791CB8C6B3ED8596BD3 /* Collection+Safe.swift in Sources */,
+				1AE9886E65620187D0E14A31 /* ContentView.swift in Sources */,
+				DE0DC782841C4318DF3EDA76 /* CoreDataManager.swift in Sources */,
+				8E88552509F6982FE5BDFE60 /* DailyScore+CoreData.swift in Sources */,
+				E5F108A2EA15DEF29414A8FD /* DailyScoreCalculator.swift in Sources */,
+				51F5DA952AC078581AAEEBA3 /* DataExporter.swift in Sources */,
+				1134C2EA9D4145C020F6CEE5 /* Date+Kairo.swift in Sources */,
+				9A49EF890BF7192F7B87454E /* DistractionDetector.swift in Sources */,
+				02A9B7A6679620C3A2C369EF /* DistractionEvent+CoreData.swift in Sources */,
+				7033B554A79A35B17C6BD11A /* DistractionOverlayView.swift in Sources */,
+				0070E37D2A892EB5ACEC0C64 /* FocusEngine.swift in Sources */,
+				FCD4039A4FAD1B80CBBA55EA /* FocusPattern+CoreData.swift in Sources */,
+				C5AD83263E16BBD8AB45E634 /* FocusPatternAnalyzer.swift in Sources */,
+				1BC9A5D8372413BBA2169C17 /* FocusSession+CoreData.swift in Sources */,
+				A17C72C9E4FBEA51F607104B /* FocusSessionView.swift in Sources */,
+				BB222222222222222222222A /* FocusShieldOverlay.swift in Sources */,
+				C8D5BD15702EAB3330937824 /* FocusStreak+CoreData.swift in Sources */,
+				518C3E859330A6BD83A46DEC /* HapticEngine.swift in Sources */,
+				07109DE4E658582349A4F018 /* HistoryView.swift in Sources */,
+				D8B10547D59A75E88D4630E8 /* HomeView.swift in Sources */,
+				A1B2C3D4E5F6A7B8C9D0E1F3 /* KairoCalendarView.swift in Sources */,
+				E1F2A3B4C5D6E7F8A9B0C1D2 /* PatternProgressView.swift in Sources */,
+				A2B3C4D5E6F7A8B9C0D1E2F3 /* CustomGoalModels.swift in Sources */,
+				C3D4E5F6A7B8C9D0E1F2A3B4 /* CreateGoalSheet.swift in Sources */,
+				705631A8BBEB9C68001B642F /* InfoPlist.swift in Sources */,
+				D5726828F686970D9C940C14 /* InsightGenerator.swift in Sources */,
+				BA23E6A19AA25D0065EA138D /* InsightsCardView.swift in Sources */,
+				AE603A04BA1344FD983BF91C /* Kairo.xcdatamodeld in Sources */,
+				CBEC1B8FE22A55665A5277D3 /* KairoAccessibility.swift in Sources */,
+				5B69B195C811D041D85484A8 /* KairoAnimations.swift in Sources */,
+				C2C815BDB948D159AB9DA1CB /* KairoApp.swift in Sources */,
+				477873FBB5C68C92FE273940 /* KairoColors.swift in Sources */,
+				5B80F759A9CB43B392265022 /* KairoTheme.swift in Sources */,
+				F84507B99D19CDF152F7B333 /* KairoTypography.swift in Sources */,
+				BDBA6D611CB17DFB83EB0524 /* MainTabView.swift in Sources */,
+				3AF02290A8EBA3E0E24F7338 /* NotificationManager.swift in Sources */,
+				E4F5A6B7C8D9E0F1A2B3C4D5 /* CalendarManager.swift in Sources */,
+				C4333FACA36EC5AD43AE8B9A /* OnboardingView.swift in Sources */,
+				0D769119B34910A0C0A63B9F /* PatternStore.swift in Sources */,
+				F46A5EE06D1C22C6784DB9CA /* PaywallView.swift in Sources */,
+				7F969ECD2D18E3F148676CEB /* PersistenceController.swift in Sources */,
+				D1409C2B18070503A50EE615 /* ProgressRing.swift in Sources */,
+				9FEA15FEA83207F70CBF32D9 /* RuleEngine.swift in Sources */,
+				E21FC4FFFA267DF29E18A25E /* ScoreStore.swift in Sources */,
+		AC3C3A3B03DF304AD7D44711 /* SessionCompletionView.swift in Sources */,
+				2CFF91E14CDCD2AFB5D6302F /* SessionCoordinator.swift in Sources */,
+				3836DCDEBB40990B5DCF2674 /* SessionStore.swift in Sources */,
+				63AF3E5FAFA06E04F8A17FBF /* SettingsView.swift in Sources */,
+				72914856FE5905D4E389EE1D /* SoundManager.swift in Sources */,
+				41AACD6734DDFEA1875325FD /* SoundPickerView.swift in Sources */,
+				B7B6525CABED2D83D3C6436F /* StatsView.swift in Sources */,
+				AE2C3512722413E6938219A0 /* StoreManager.swift in Sources */,
+				2DE924B8EA3E991F28545394 /* TimeInterval+Display.swift in Sources */,
+				C880E57E306071AF5BDB2C2A /* TimerState.swift in Sources */,
+				1A09AA743ACC2BEAB4DC1446 /* WidgetDataProvider.swift in Sources */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* FocusCoach.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A1B2 /* CoachingInsightCard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		470A4A5E9144B63D8B803CB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3B5E2619EC21D5359A58C4F /* FocusTimeWidget.swift in Sources */,
+				7CC4426296633DBAE2C600FD /* KairoColors.swift in Sources */,
+				70ACEAC7B013DEF346C91449 /* KairoTheme.swift in Sources */,
+				C5EAC988D962A55ADAEBE3D6 /* KairoTypography.swift in Sources */,
+				A9A38E4B6FD2418E0163F412 /* KairoWidgetBundle.swift in Sources */,
+				2E5EE3DFD922DFFA13EC2BC4 /* StreakWidget.swift in Sources */,
+				114937F91B605F8412AADA25 /* TimeInterval+Display.swift in Sources */,
+				FC237C4CF0617C566778525A /* WidgetDataProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F40150398D50B0797F5B160 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A601308EDEC2FFE66666AF57 /* KairoWidgets */;
+			targetProxy = 28F0D50E6A585EB4C5F29BF5 /* PBXContainerItemProxy */;
+		};
+		BC5850232477D2DCB9454ABD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92631A9C59B27ED72FFA931F /* Kairo */;
+			targetProxy = 96B029CEEAD8084CDF5638FA /* PBXContainerItemProxy */;
+		};
+		C5D4999D354FB867C382A89C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92631A9C59B27ED72FFA931F /* Kairo */;
+			targetProxy = DAFF605A49CD2ECF95D39E37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3548C9BCF5A6F747F10CEAF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Kairo/Kairo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_CFBundleDisplayName = Kairo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "Kairo can schedule your focus sessions on your calendar and remind you when it's time to focus.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Kairo uses motion data to detect phone pickups during focus sessions.";
+				INFOPLIST_KEY_NSUserNotificationsUsageDescription = "Kairo sends notifications for session completion, break timing, and streak reminders.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIBackgroundModes = "audio fetch processing";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apexdigital.kairo;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		536467452D6E972FF220983D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KairoWidgets/KairoWidgets.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = KairoWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apexdigital.kairo.widgets;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		677DF6F5BC04D51E17D8AD05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WWZMACL428;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		6A7AF3502E6EA5786E1BE349 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Kairo/Kairo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_CFBundleDisplayName = Kairo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "Kairo can schedule your focus sessions on your calendar and remind you when it's time to focus.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Kairo uses motion data to detect phone pickups during focus sessions.";
+				INFOPLIST_KEY_NSUserNotificationsUsageDescription = "Kairo sends notifications for session completion, break timing, and streak reminders.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIBackgroundModes = "audio fetch processing";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apexdigital.kairo;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9FA697EDD5F8E355B78A3B52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.apexdigital.KairoTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kairo.app/Kairo";
+			};
+			name = Debug;
+		};
+		ACFF1A784390319836B9D6A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.apexdigital.KairoTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kairo.app/Kairo";
+			};
+			name = Release;
+		};
+		BB5B9E4EE2CEA9744B2EDCCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = WWZMACL428;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		BEB92953BC822DF276FA9488 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KairoWidgets/KairoWidgets.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = KairoWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apexdigital.kairo.widgets;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5F7A2CF0DDF7D331CEFFCCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.apexdigital.KairoUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kairo;
+			};
+			name = Debug;
+		};
+		FCE0B8FAD057DB15872E259A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.apexdigital.KairoUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kairo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E501D6312ECB0DFEBE25779 /* Build configuration list for PBXNativeTarget "KairoWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEB92953BC822DF276FA9488 /* Debug */,
+				536467452D6E972FF220983D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5B595245816406F78D12B591 /* Build configuration list for PBXNativeTarget "KairoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA697EDD5F8E355B78A3B52 /* Debug */,
+				ACFF1A784390319836B9D6A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		939F71B13156C832C368D410 /* Build configuration list for PBXNativeTarget "KairoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F7A2CF0DDF7D331CEFFCCF /* Debug */,
+				FCE0B8FAD057DB15872E259A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AC1ED10F3BC8AC0020A66B51 /* Build configuration list for PBXProject "Kairo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB5B9E4EE2CEA9744B2EDCCF /* Debug */,
+				677DF6F5BC04D51E17D8AD05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BEB7E67CF690A59DA4FD43B9 /* Build configuration list for PBXNativeTarget "Kairo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3548C9BCF5A6F747F10CEAF1 /* Debug */,
+				6A7AF3502E6EA5786E1BE349 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A767B46ED0A3281F1D592D90 /* Kairo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3EC6AC85D18660B6D2D4499F /* Kairo.xcdatamodel */,
+			);
+			currentVersion = 3EC6AC85D18660B6D2D4499F /* Kairo.xcdatamodel */;
+			path = Kairo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8BAE484607F13FF20567ED85 /* Project object */;
+}

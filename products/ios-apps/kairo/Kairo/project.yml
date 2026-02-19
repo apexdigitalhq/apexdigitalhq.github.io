@@ -1,0 +1,116 @@
+name: Kairo
+options:
+  bundleIdPrefix: com.apexdigital
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    DEVELOPMENT_TEAM: "WWZMACL428"
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  Kairo:
+    type: application
+    platform: iOS
+    sources:
+      - path: Kairo
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.apexdigital.kairo
+        INFOPLIST_GENERATION_MODE: GeneratedFile
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
+        INFOPLIST_KEY_CFBundleDisplayName: "Kairo"
+        INFOPLIST_KEY_LSApplicationCategoryType: "public.app-category.productivity"
+        INFOPLIST_KEY_NSMotionUsageDescription: "Kairo uses motion data to detect phone pickups during focus sessions."
+        INFOPLIST_KEY_NSUserNotificationsUsageDescription: "Kairo sends notifications for session completion, break timing, and streak reminders."
+        INFOPLIST_KEY_UIBackgroundModes: "audio fetch processing"
+        SWIFT_EMIT_LOC_STRINGS: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    entitlements:
+      path: Kairo/Kairo.entitlements
+    dependencies:
+      - target: KairoWidgets
+        embed: true
+
+  KairoWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: KairoWidgets
+        excludes:
+          - "**/.DS_Store"
+          - "Info.plist"
+      - path: Kairo/Core/WidgetDataProvider.swift
+      - path: Kairo/Design/KairoColors.swift
+      - path: Kairo/Design/KairoTheme.swift
+      - path: Kairo/Design/KairoTypography.swift
+      - path: Kairo/Extensions/TimeInterval+Display.swift
+    info:
+      path: KairoWidgets/Info.plist
+      properties:
+        CFBundleDisplayName: KairoWidgets
+        CFBundleShortVersionString: "1.0.0"
+        CFBundleVersion: "1"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.apexdigital.kairo.widgets
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_EMIT_LOC_STRINGS: YES
+    entitlements:
+      path: KairoWidgets/KairoWidgets.entitlements
+
+  KairoTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: KairoTests
+        excludes:
+          - "**/.DS_Store"
+    dependencies:
+      - target: Kairo
+
+  KairoUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: KairoUITests
+        excludes:
+          - "**/.DS_Store"
+    dependencies:
+      - target: Kairo
+
+schemes:
+  Kairo:
+    build:
+      targets:
+        Kairo: all
+        KairoWidgets: all
+        KairoTests: [test]
+        KairoUITests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - KairoTests
+        - KairoUITests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

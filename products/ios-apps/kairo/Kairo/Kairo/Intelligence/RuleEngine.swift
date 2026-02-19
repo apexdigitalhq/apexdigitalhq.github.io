@@ -1,0 +1,526 @@
+import Foundation
+import SwiftUI
+
+// MARK: - SessionContext
+
+/// Captures the current moment's context for intelligent session suggestions.
+///
+/// Built from recent session history and device state before each new session.
+/// Fed into the `RuleEngine` to produce adaptive duration, break, and quality
+/// recommendations during the heuristic phase (Days 1–14).
+struct SessionContext {
+
+    /// Current hour of the day (0–23).
+    let hour: Int
+
+    /// Day of the week (ISO: 1 = Monday, 7 = Sunday).
+    let dayOfWeek: Int
+
+    /// Consecutive days the user has completed at least one session.
+    let currentStreak: Int
+
+    /// Whether the most recent session was abandoned (< 50% completion).
+    let lastSessionAbandoned: Bool
+
+    /// Number of sessions completed so far today.
+    let sessionsToday: Int
+
+    /// Quality rating of the most recent session, if any.
+    let lastSessionQuality: FocusQuality?
+
+    /// Rolling 7-day session completion rate (0.0–1.0).
+    let rollingCompletionRate7d: Double
+
+    // MARK: - Factory
+
+    /// Builds a `SessionContext` from the current time. Useful for quick
+    /// suggestions when session history is unavailable.
+    static func now(
+        streak: Int = 0,
+        lastAbandoned: Bool = false,
+        sessionsToday: Int = 0,
+        lastQuality: FocusQuality? = nil,
+        completionRate: Double = 0.8
+    ) -> SessionContext {
+        let now = Date()
+        return SessionContext(
+            hour: now.hour,
+            dayOfWeek: now.isoDayOfWeek,
+            currentStreak: streak,
+            lastSessionAbandoned: lastAbandoned,
+            sessionsToday: sessionsToday,
+            lastSessionQuality: lastQuality,
+            rollingCompletionRate7d: completionRate
+        )
+    }
+}
+
+// MARK: - FocusQuality
+
+/// Discrete quality levels for completed focus sessions.
+///
+/// Derived from completion ratio and distraction rate following the
+/// architecture's assessment formula.
+enum FocusQuality: String, CaseIterable, Codable {
+    case high   = "high"
+    case medium = "medium"
+    case low    = "low"
+
+    /// Human-readable label.
+    var displayName: String {
+        switch self {
+        case .high:   return "High"
+        case .medium: return "Medium"
+        case .low:    return "Low"
+        }
+    }
+
+    /// Semantic color matching Kairo's design system.
+    var color: Color {
+        switch self {
+        case .high:   return KairoColors.successAdaptive
+        case .medium: return KairoColors.warningAdaptive
+        case .low:    return KairoColors.mutedAdaptive
+        }
+    }
+
+    /// SF Symbol for UI display.
+    var iconName: String {
+        switch self {
+        case .high:   return "star.fill"
+        case .medium: return "star.leadinghalf.filled"
+        case .low:    return "star"
+        }
+    }
+
+    /// Numeric weight for averaging (1.0 = high, 0.5 = medium, 0.2 = low).
+    var numericValue: Double {
+        switch self {
+        case .high:   return 1.0
+        case .medium: return 0.5
+        case .low:    return 0.2
+        }
+    }
+
+    /// Initializes from a raw quality rating string stored in Core Data.
+    init?(rating: String) {
+        self.init(rawValue: rating)
+    }
+}
+
+// MARK: - RuleEngine
+
+/// Heuristic-based intelligence engine for Days 1–14 of the adaptive focus system.
+///
+/// Provides session length suggestions, break timing, quality assessment, and
+/// contextual messaging before the Core ML models have sufficient training data.
+/// All rules are derived from the architecture's documented heuristics:
+///
+/// - Morning cognitive peak (8–11): +20% duration
+/// - Post-lunch dip (13–15): -20% duration
+/// - Last session abandoned: -25% duration
+/// - Streak > 3 days: +5 min; > 7 days: +10 min
+/// - Evening wind-down (after 20:00): -15% duration
+///
+/// The engine degrades gracefully — even with zero history, it produces
+/// sensible defaults based on time-of-day alone.
+final class RuleEngine: ObservableObject {
+
+    // MARK: - Configuration
+
+    /// Base session length in seconds (25 min Pomodoro default).
+    private let baseLength: TimeInterval = TimeInterval(KairoTheme.SessionPreset.defaultDuration * 60)
+
+    /// Minimum suggested session length (10 min).
+    private let minimumSessionLength: TimeInterval = 600
+
+    /// Maximum suggested session length (90 min).
+    private let maximumSessionLength: TimeInterval = 5400
+
+    /// Short break duration in seconds (5 min).
+    private let shortBreakBase: TimeInterval = TimeInterval(KairoTheme.SessionPreset.shortBreak * 60)
+
+    /// Long break duration in seconds (15 min).
+    private let longBreakBase: TimeInterval = TimeInterval(KairoTheme.SessionPreset.longBreak * 60)
+
+    /// Every Nth session triggers a long break.
+    private let longBreakInterval: Int = KairoTheme.SessionPreset.longBreakInterval
+
+    // MARK: - Published State
+
+    /// The most recent suggestion generated by the engine.
+    @Published private(set) var lastSuggestion: TimeInterval = 1500
+
+    /// The most recent contextual message.
+    @Published private(set) var lastMessage: String = ""
+
+    // MARK: - Session Length Suggestion
+
+    /// Suggests an optimal session duration based on the current context.
+    ///
+    /// Applies time-of-day modifiers, streak bonuses, and failure recovery
+    /// in a layered fashion. Modifiers stack multiplicatively (time-of-day)
+    /// and additively (streak), then clamp to the allowed range.
+    ///
+    /// - Parameter context: Current session context.
+    /// - Returns: Suggested duration in seconds.
+    func suggestSessionLength(for context: SessionContext) -> TimeInterval {
+        var duration = baseLength
+
+        // — Time-of-day modifiers (multiplicative) —
+
+        // Rule 1: Morning cognitive peak (8–11) → +20%
+        if context.hour >= 8 && context.hour <= 11 {
+            duration *= 1.20
+        }
+        // Rule 2: Post-lunch dip (13–15) → -20%
+        else if context.hour >= 13 && context.hour <= 15 {
+            duration *= 0.80
+        }
+        // Rule 3: Evening wind-down (after 20:00) → -15%
+        else if context.hour >= 20 {
+            duration *= 0.85
+        }
+
+        // — Failure recovery (multiplicative, strongest override) —
+
+        // Rule 4: Last session abandoned → -25%
+        if context.lastSessionAbandoned {
+            duration *= 0.75
+        }
+
+        // — Streak bonuses (additive, use the higher tier only) —
+
+        // Rule 5: Streak > 7 days → +10 min
+        if context.currentStreak > 7 {
+            duration += 600
+        }
+        // Rule 6: Streak > 3 days → +5 min
+        else if context.currentStreak > 3 {
+            duration += 300
+        }
+
+        // — Low completion rate dampening —
+
+        // If rolling 7-day rate is poor, pull toward shorter sessions
+        if context.rollingCompletionRate7d < 0.5 && context.rollingCompletionRate7d > 0 {
+            duration *= 0.85
+        }
+
+        // — Fatigue guard: many sessions today → slightly shorter —
+
+        if context.sessionsToday >= 6 {
+            duration *= 0.90
+        } else if context.sessionsToday >= 4 {
+            duration *= 0.95
+        }
+
+        // Clamp to allowed range
+        duration = max(minimumSessionLength, min(maximumSessionLength, duration))
+
+        // Round to nearest 5 minutes for clean presets
+        let roundedMinutes = (duration / 300).rounded() * 300
+        let result = max(minimumSessionLength, roundedMinutes)
+
+        lastSuggestion = result
+        return result
+    }
+
+    // MARK: - Break Length Suggestion
+
+    /// Suggests a break duration based on session count and quality.
+    ///
+    /// Every `longBreakInterval`th session (default: 4th) triggers a long break.
+    /// Quality adjusts: high quality sessions get slightly shorter breaks
+    /// (user is in flow), low quality gets longer recovery breaks.
+    ///
+    /// - Parameters:
+    ///   - sessionCount: Number of sessions completed in the current block.
+    ///   - quality: Quality of the most recent session.
+    /// - Returns: Break duration in seconds.
+    func suggestBreakLength(sessionCount: Int, quality: FocusQuality) -> TimeInterval {
+        let isLongBreak = sessionCount > 0 && sessionCount % longBreakInterval == 0
+        var breakDuration = isLongBreak ? longBreakBase : shortBreakBase
+
+        // Quality adjustment
+        switch quality {
+        case .high:
+            // In the zone — shorter break to maintain momentum
+            breakDuration *= 0.85
+        case .medium:
+            // Standard break
+            break
+        case .low:
+            // Needs more recovery time
+            breakDuration *= 1.20
+        }
+
+        // Minimum 2 minutes, maximum 20 minutes
+        return max(120, min(1200, breakDuration))
+    }
+
+    // MARK: - Quality Assessment
+
+    /// Assesses the quality of a completed focus session.
+    ///
+    /// Implements the architecture's quality formula:
+    /// - High: completion ≥ 90% AND distraction rate < 0.5/min
+    /// - Medium: completion ≥ 70% AND distraction rate < 1.0/min
+    /// - Low: everything else
+    ///
+    /// - Parameter session: A completed `FocusSession` entity.
+    /// - Returns: The assessed `FocusQuality` level.
+    func assessQuality(_ session: FocusSession) -> FocusQuality {
+        guard session.targetDuration > 0 else { return .low }
+
+        let completionRatio = Double(session.actualDuration) / Double(session.targetDuration)
+        let sessionMinutes = max(1.0, Double(session.actualDuration) / 60.0)
+        let distractionRate = Double(session.distractionCount) / sessionMinutes
+
+        if completionRatio >= 0.9 && distractionRate < 0.5 {
+            return .high
+        }
+        if completionRatio >= 0.7 && distractionRate < 1.0 {
+            return .medium
+        }
+        return .low
+    }
+
+    // MARK: - Quality Prediction
+
+    /// Predicts the likely quality of an upcoming session before it starts.
+    ///
+    /// Uses contextual signals (time of day, recent performance, streak) to
+    /// estimate whether conditions favor a high-quality session. Returns both
+    /// a predicted quality and a confidence level (0.0–1.0).
+    ///
+    /// - Parameter context: Current session context.
+    /// - Returns: A tuple of predicted quality and confidence (0.0–1.0).
+    func predictQuality(for context: SessionContext) -> (quality: FocusQuality, confidence: Double) {
+        var score: Double = 0.5  // neutral baseline
+        var confidence: Double = 0.4  // low confidence initially
+
+        // Time-of-day signal
+        if context.hour >= 8 && context.hour <= 11 {
+            score += 0.20  // morning peak
+            confidence += 0.10
+        } else if context.hour >= 13 && context.hour <= 15 {
+            score -= 0.15  // post-lunch dip
+            confidence += 0.08
+        } else if context.hour >= 20 {
+            score -= 0.10  // evening
+            confidence += 0.05
+        }
+
+        // Streak signal — sustained focus habits predict quality
+        if context.currentStreak > 7 {
+            score += 0.15
+            confidence += 0.10
+        } else if context.currentStreak > 3 {
+            score += 0.10
+            confidence += 0.08
+        }
+
+        // Last session quality carries forward
+        if let lastQuality = context.lastSessionQuality {
+            switch lastQuality {
+            case .high:
+                score += 0.10
+                confidence += 0.12
+            case .medium:
+                // Neutral — no adjustment
+                confidence += 0.05
+            case .low:
+                score -= 0.10
+                confidence += 0.08
+            }
+        }
+
+        // Abandoned session is a strong negative signal
+        if context.lastSessionAbandoned {
+            score -= 0.20
+            confidence += 0.15
+        }
+
+        // Rolling completion rate
+        if context.rollingCompletionRate7d >= 0.8 {
+            score += 0.10
+            confidence += 0.10
+        } else if context.rollingCompletionRate7d < 0.5 {
+            score -= 0.10
+            confidence += 0.08
+        }
+
+        // Too many sessions today = fatigue
+        if context.sessionsToday >= 5 {
+            score -= 0.10
+        }
+
+        // Clamp score to [0, 1]
+        score = max(0, min(1.0, score))
+        confidence = max(0.1, min(0.9, confidence))
+
+        // Map score to quality tier
+        let quality: FocusQuality
+        if score >= 0.65 {
+            quality = .high
+        } else if score >= 0.40 {
+            quality = .medium
+        } else {
+            quality = .low
+        }
+
+        return (quality, confidence)
+    }
+
+    // MARK: - Session Type Suggestion
+
+    /// Suggests a session type based on time-of-day patterns.
+    ///
+    /// Morning hours favor deep work, mid-day suits study, afternoon
+    /// leans creative, and evenings default to personal.
+    ///
+    /// - Parameter context: Current session context.
+    /// - Returns: Suggested session type string matching `KairoTheme.SessionType`.
+    func suggestSessionType(for context: SessionContext) -> String {
+        switch context.hour {
+        case 6...10:
+            return KairoTheme.SessionType.work.rawValue
+        case 11...13:
+            return KairoTheme.SessionType.study.rawValue
+        case 14...17:
+            return KairoTheme.SessionType.creative.rawValue
+        case 18...21:
+            return KairoTheme.SessionType.personal.rawValue
+        default:
+            return KairoTheme.SessionType.personal.rawValue
+        }
+    }
+
+    // MARK: - Contextual Messages
+
+    /// Generates a motivational, context-aware message for the session start screen.
+    ///
+    /// Messages vary based on time of day, streak state, last session result,
+    /// and session count. Multiple templates per scenario prevent repetition.
+    ///
+    /// - Parameter context: Current session context.
+    /// - Returns: A human-friendly message string.
+    func generateSessionMessage(for context: SessionContext) -> String {
+        let suggestedMinutes = Int(suggestSessionLength(for: context) / 60)
+
+        // — Streak celebration messages —
+        if context.currentStreak > 7 {
+            let streakMessages = [
+                "🔥 \(context.currentStreak)-day streak! You're building a serious habit. Ready for \(suggestedMinutes) minutes?",
+                "💪 Day \(context.currentStreak) in a row — your consistency is paying off. Let's keep it going!",
+                "🏆 \(context.currentStreak) consecutive days of focus. That's dedication. Another \(suggestedMinutes) min?",
+                "⚡ Streak level: \(context.currentStreak) days. Your focus game is strong.",
+                "🎯 \(context.currentStreak) days without breaking the chain. Let's add another."
+            ]
+            return streakMessages.randomElement()!
+        }
+
+        if context.currentStreak > 3 {
+            let streakMessages = [
+                "🔥 \(context.currentStreak)-day streak building! A \(suggestedMinutes)-min session keeps it alive.",
+                "Nice momentum — \(context.currentStreak) days in a row. Ready for \(suggestedMinutes) minutes?",
+                "You're on a \(context.currentStreak)-day roll. Let's keep the streak going!",
+                "📈 \(context.currentStreak) consecutive days. Your focus rhythm is forming."
+            ]
+            return streakMessages.randomElement()!
+        }
+
+        // — Recovery after abandoned session —
+        if context.lastSessionAbandoned {
+            let recoveryMessages = [
+                "Starting fresh with a \(suggestedMinutes)-min session. Shorter and focused wins the day.",
+                "No worries about last time — a \(suggestedMinutes)-min session is a great reset.",
+                "🌱 Every session is a new start. Try \(suggestedMinutes) minutes at a comfortable pace.",
+                "Let's ease back in with \(suggestedMinutes) minutes. Small wins build momentum.",
+                "The best session is the one you finish. \(suggestedMinutes) minutes, let's do it."
+            ]
+            return recoveryMessages.randomElement()!
+        }
+
+        // — Time-of-day messages —
+        if context.hour >= 6 && context.hour < 9 {
+            let morningMessages = [
+                "☀️ Early morning focus — your brain is fresh. \(suggestedMinutes) minutes of deep work?",
+                "🌅 Morning peak detected — perfect for a \(suggestedMinutes)-min focused session.",
+                "Rise and focus! Morning hours are your cognitive sweet spot.",
+                "Your brain's sharpest right now. A \(suggestedMinutes)-min session will fly by.",
+                "☕ Fresh mind, fresh session. Ready for \(suggestedMinutes) minutes?"
+            ]
+            return morningMessages.randomElement()!
+        }
+
+        if context.hour >= 9 && context.hour <= 11 {
+            let peakMessages = [
+                "🎯 Peak focus window — ready for a \(suggestedMinutes)-min deep session?",
+                "Mid-morning is prime time for concentration. Let's make it count!",
+                "Your focus peaks right now — \(suggestedMinutes) minutes of quality work ahead.",
+                "💡 This is when your brain does its best work. \(suggestedMinutes) min?",
+                "Perfect timing — late morning focus sessions tend to be your strongest."
+            ]
+            return peakMessages.randomElement()!
+        }
+
+        if context.hour >= 13 && context.hour <= 15 {
+            let dipMessages = [
+                "🍃 Post-lunch dip is normal — a shorter \(suggestedMinutes)-min session works well here.",
+                "Afternoon slump? A focused \(suggestedMinutes)-min burst beats fighting it.",
+                "Smart move starting now — a compact \(suggestedMinutes)-min session sidesteps the afternoon dip.",
+                "Energy dips after lunch. A \(suggestedMinutes)-min session is sized just right.",
+                "The afternoon dip is real. \(suggestedMinutes) minutes keeps it achievable."
+            ]
+            return dipMessages.randomElement()!
+        }
+
+        if context.hour >= 20 {
+            let eveningMessages = [
+                "🌙 Evening session — \(suggestedMinutes) minutes keeps it light before wind-down.",
+                "Late session? \(suggestedMinutes) minutes is enough to make progress without burning out.",
+                "Night owl mode — a \(suggestedMinutes)-min session wraps the day on a strong note.",
+                "✨ Evening focus can be powerful. \(suggestedMinutes) minutes, then rest well.",
+                "One more focused burst — \(suggestedMinutes) minutes to close out the day."
+            ]
+            return eveningMessages.randomElement()!
+        }
+
+        // — Default / afternoon messages —
+        let defaultMessages = [
+            "Ready for \(suggestedMinutes) minutes of focused work?",
+            "Let's lock in — \(suggestedMinutes) minutes of deep focus ahead.",
+            "🎯 \(suggestedMinutes) minutes. One session at a time.",
+            "Focus time — \(suggestedMinutes) minutes of undivided attention.",
+            "Your next session: \(suggestedMinutes) minutes of quality focus."
+        ]
+        return defaultMessages.randomElement()!
+    }
+
+    // MARK: - Batch Assessment
+
+    /// Assesses quality for an array of sessions, returning a distribution.
+    ///
+    /// - Parameter sessions: Array of completed `FocusSession` entities.
+    /// - Returns: Dictionary mapping each quality level to its count.
+    func qualityDistribution(for sessions: [FocusSession]) -> [FocusQuality: Int] {
+        var distribution: [FocusQuality: Int] = [.high: 0, .medium: 0, .low: 0]
+        for session in sessions {
+            let quality = assessQuality(session)
+            distribution[quality, default: 0] += 1
+        }
+        return distribution
+    }
+
+    /// Computes the weighted average quality score for a set of sessions.
+    ///
+    /// - Parameter sessions: Array of completed `FocusSession` entities.
+    /// - Returns: Average quality value (0.0–1.0).
+    func averageQuality(for sessions: [FocusSession]) -> Double {
+        guard !sessions.isEmpty else { return 0 }
+        let total = sessions.reduce(0.0) { $0 + assessQuality($1).numericValue }
+        return total / Double(sessions.count)
+    }
+}
