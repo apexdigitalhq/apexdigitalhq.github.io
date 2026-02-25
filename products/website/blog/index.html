@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Apex Digital | AI Tips & Strategies for Entrepreneurs</title>
+<meta name="description" content="Actionable AI strategies, prompts, and guides for entrepreneurs. Learn how to use AI to launch, automate, and scale your business.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://apexdigitalhq.github.io/blog/">
+<meta property="og:title" content="Blog — Apex Digital">
+<meta property="og:description" content="Actionable AI strategies, prompts, and guides for entrepreneurs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://apexdigitalhq.github.io/blog/">
+<meta property="og:site_name" content="Apex Digital">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Blog — Apex Digital">
+<meta name="twitter:description" content="Actionable AI strategies, prompts, and guides for entrepreneurs.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='28' height='28' x='2' y='4' rx='7' fill='%230A0A0A'/%3E%3Cpolygon points='16,9 11,22 21,22' fill='none' stroke='%23fff' stroke-width='2' stroke-linejoin='round'/%3E%3Ccircle cx='26' cy='6' r='4.5' fill='%230ABAB5'/%3E%3C/svg%3E">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --teal: #0ABAB5;
+  --teal-dim: rgba(10, 186, 181, 0.12);
+  --dark: #0A0A0A;
+  --dark-card: #111111;
+  --dark-card-hover: #161616;
+  --border: rgba(255,255,255,0.06);
+  --border-hover: rgba(255,255,255,0.12);
+  --white: #FFFFFF;
+  --text: #E0E0E0;
+  --text-muted: #888888;
+  --text-dim: #555555;
+  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --radius: 16px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font);
+  background: var(--dark);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { color: var(--white); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+a { color: var(--teal); text-decoration: none; transition: opacity var(--transition); }
+a:hover { opacity: 0.85; }
+
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.badge--teal { background: var(--teal-dim); color: var(--teal); border: 1px solid rgba(10,186,181,0.2); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.btn--primary {
+  background: var(--teal);
+  color: var(--dark);
+  box-shadow: 0 4px 24px rgba(10, 186, 181, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.btn--primary:hover {
+  background: #09d4ce;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 40px rgba(10, 186, 181, 0.4);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--border-hover);
+}
+.btn--ghost:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-1px);
+}
+.btn--sm { padding: 12px 24px; font-size: 0.9rem; border-radius: 10px; }
+
+/* ── Nav ── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 0;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid var(--border);
+  transition: all var(--transition);
+}
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+.nav__icon {
+  width: 38px;
+  height: 38px;
+  position: relative;
+  flex-shrink: 0;
+}
+.nav__icon-base {
+  width: 34px;
+  height: 34px;
+  background: var(--white);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.nav__icon-peak {
+  width: 0; height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 13px solid var(--dark);
+  position: relative;
+  top: -1px;
+}
+.nav__icon-dot {
+  width: 9px;
+  height: 9px;
+  background: var(--teal);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-shadow: 0 0 8px rgba(10,186,181,0.5);
+}
+.nav__wordmark {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.03em;
+}
+.nav__wordmark span { font-weight: 400; color: var(--text-muted); }
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav__links a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.nav__links a:hover { color: var(--white); opacity: 1; }
+.nav__cta { margin-left: 8px; }
+.nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.nav__toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+/* ── Hero ── */
+.blog-hero {
+  padding: 160px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.blog-hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(10,186,181,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.blog-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+.blog-hero h1 { margin-bottom: 16px; }
+.blog-hero h1 .teal { color: var(--teal); }
+.blog-hero__sub {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--text-muted);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ── Blog Grid ── */
+.blog-grid {
+  padding: 80px 0 120px;
+}
+.blog-grid__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+/* ── Blog Card ── */
+.blog-card {
+  background: var(--dark-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.blog-card:hover {
+  border-color: var(--border-hover);
+  background: var(--dark-card-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.blog-card__date {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+.blog-card h3 {
+  margin-bottom: 14px;
+  line-height: 1.35;
+}
+.blog-card h3 a {
+  color: var(--white);
+  transition: color var(--transition);
+}
+.blog-card h3 a:hover {
+  color: var(--teal);
+  opacity: 1;
+}
+.blog-card__excerpt {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 24px;
+  flex: 1;
+}
+.blog-card__link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--teal);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.blog-card__link:hover { opacity: 0.85; }
+.blog-card__tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--teal-dim);
+  color: var(--teal);
+  border: 1px solid rgba(10,186,181,0.15);
+  margin-bottom: 16px;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+}
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.footer__wordmark {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.footer__wordmark span { font-weight: 400; }
+.footer__links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+.footer__links a {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  transition: color var(--transition);
+}
+.footer__links a:hover { color: var(--text-muted); }
+.footer__copy {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .blog-grid__list { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__cta { display: none; }
+  .nav__toggle { display: block; }
+  .nav__links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10,10,10,0.98);
+    backdrop-filter: blur(20px);
+    padding: 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav__links.open .nav__cta { display: block; }
+  .blog-hero { padding: 130px 0 60px; }
+  .blog-grid { padding: 60px 0 80px; }
+  .footer__inner {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+  .footer__links { flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .blog-card { padding: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════ NAVIGATION ════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo" aria-label="Apex Digital home">
+      <div class="nav__icon">
+        <div class="nav__icon-base">
+          <div class="nav__icon-peak"></div>
+        </div>
+        <div class="nav__icon-dot"></div>
+      </div>
+      <div class="nav__wordmark">apex <span>digital</span></div>
+    </a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#why">Why Apex</a></li>
+      <li><a href="./">Blog</a></li>
+      <li><a href="../index.html#free">Free Starter Pack</a></li>
+      <li class="nav__cta"><a href="../index.html#products" class="btn btn--primary btn--sm">Get Started</a></li>
+    </ul>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ════════════ HERO ════════════ -->
+<section class="blog-hero">
+  <div class="container">
+    <span class="badge badge--teal" style="margin-bottom: 24px; animation: fadeUp 0.6s ease both;">◆ Blog</span>
+    <h1 style="animation: fadeUp 0.6s 0.1s ease both;">Insights for <span class="teal">builders.</span></h1>
+    <p class="blog-hero__sub" style="animation: fadeUp 0.6s 0.2s ease both;">
+      Actionable AI strategies, prompt engineering tips, and startup guides — written for entrepreneurs who ship.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════ BLOG POSTS ════════════ -->
+<section class="blog-grid">
+  <div class="container">
+    <div class="blog-grid__list">
+
+      <!-- Post 1 -->
+      <article class="blog-card fade-in">
+        <span class="blog-card__tag">AI Prompts</span>
+        <div class="blog-card__date">February 11, 2026</div>
+        <h3><a href="best-ai-prompts-business.html">The 10 Best AI Prompts for Small Business Owners (2026)</a></h3>
+        <p class="blog-card__excerpt">
+          Discover the 10 best AI prompts for small business owners. Copy-paste ChatGPT prompts for marketing, sales, operations, and growth — tested and ready to use.
+        </p>
+        <a href="best-ai-prompts-business.html" class="blog-card__link">
+          Read Article →
+        </a>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="blog-card fade-in">
+        <span class="blog-card__tag">Startup Guide</span>
+        <div class="blog-card__date">February 11, 2026</div>
+        <h3><a href="ai-start-business-2026.html">How to Use AI to Start a Business With $0 in 2026</a></h3>
+        <p class="blog-card__excerpt">
+          Learn how to start a business with AI and zero dollars. A practical guide covering free AI tools, business models, and step-by-step strategies for launching with no money.
+        </p>
+        <a href="ai-start-business-2026.html" class="blog-card__link">
+          Read Article →
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="nav__icon" style="width:28px;height:28px;">
+          <div class="nav__icon-base" style="width:25px;height:25px;border-radius:7px;">
+            <div class="nav__icon-peak" style="border-left-width:5px;border-right-width:5px;border-bottom-width:10px;top:0;"></div>
+          </div>
+          <div class="nav__icon-dot" style="width:7px;height:7px;"></div>
+        </div>
+        <div class="footer__wordmark">apex <span>digital</span></div>
+      </div>
+      <ul class="footer__links">
+        <li><a href="https://instagram.com/apexdigitalhq" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://twitter.com/apexdigitalhq" target="_blank" rel="noopener">Twitter</a></li>
+        <li><a href="https://apexdigitalhq.gumroad.com" target="_blank" rel="noopener">Gumroad</a></li>
+        <li><a href="mailto:hello@apexdigitalhq.com">Contact</a></li>
+      </ul>
+      <p class="footer__copy">© 2025 Apex Digital. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => links.classList.remove('open'));
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 60) {
+    nav.style.padding = '10px 0';
+    nav.style.borderBottomColor = 'rgba(255,255,255,0.08)';
+  } else {
+    nav.style.padding = '16px 0';
+    nav.style.borderBottomColor = 'rgba(255,255,255,0.04)';
+  }
+}, { passive: true });
+</script>
+
+</body>
+</html>
